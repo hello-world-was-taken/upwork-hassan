@@ -15,10 +15,9 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(390, 844),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: TermsAndConditions()
-          
-      ),
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(fontFamily: 'MsGothic'),
+          home: TermsAndConditions()),
     );
   }
 }
