@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class bulletText extends StatelessWidget {
+class BulletText extends StatelessWidget {
   final String text;
-  const bulletText({super.key,required this.text});
+  const BulletText({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +11,12 @@ class bulletText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(right: 10.w.w,top:5.h ),
+          margin: EdgeInsets.only(right: 10.w.w, top: 5.h),
           color: Colors.black,
           width: 12,
           height: 15.h,
         ),
-         Flexible(
+        Flexible(
           child: Container(
             child: Text(
               text,
