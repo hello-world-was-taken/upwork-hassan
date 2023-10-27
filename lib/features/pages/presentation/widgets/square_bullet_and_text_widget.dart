@@ -11,10 +11,10 @@ class BulletText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(right: 10, top: 5.h),
+          margin: EdgeInsets.only(right: 10, top: 8.h),
           color: Colors.black,
           width: 12,
-          height: 15.h,
+          height: 15,
         ),
         Flexible(
           child: Container(

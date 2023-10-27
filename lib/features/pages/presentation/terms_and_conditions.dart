@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/agreement.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/square_bullet_and_text_widget.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/term_holder.dart';
 
@@ -17,7 +19,6 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      
       child: Scaffold(
         backgroundColor: Color(0XFFf5f5f5),
         appBar: CustomAppBar(),
@@ -50,19 +51,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 25.h),
-                      width: double.infinity,
-                      height: 50.h,
-                      decoration: BoxDecoration(
-                          color: Color(0XFF757575),
-                          borderRadius: BorderRadius.circular(5.r)),
-                      child: Center(
-                          child: Text(
-                        "プライバシーポリシー",
-                        style: TextStyle(color: Colors.white, fontSize: 20.h),
-                      )),
-                    ),
+                    SecondaryColorHeading(title: "プライバシーポリシー"),
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -78,9 +67,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 10.h),
                             width: double.infinity,
-                            color: Colors.red,
                             child: Image.asset(
-                              "assets/images/new.jpg",
+                              "assets/images/newww.png",
                               width: 300.w,
                               fit: BoxFit.cover,
                             ),
@@ -179,32 +167,13 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
               SizedBox(
                 height: 5.h,
               ),
-              Container(
-                margin: EdgeInsets.only(top: 10.h),
-                width: 350.w,
-                height: 70.h,
-                child: ElevatedButton(
-                  onPressed: () {
-                      Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Agreement()),
-  );
-                  },
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            10.0), // Set the border radius
-                      ),
-                    ),
-                  ),
-                  child: Text(
-                    '同意して次へ進む',
-                    style: TextStyle(color: Colors.white, fontSize: 18.sp),
-                  ),
-                ),
+              ActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Agreement()),
+                  );
+                },
               ),
               SizedBox(
                 height: 25.h,

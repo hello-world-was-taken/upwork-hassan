@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/agreement.dart';
-import 'package:upwork_hassan/features/pages/presentation/dashboard.dart';
 import 'package:upwork_hassan/features/pages/presentation/terms_and_conditions.dart';
 
 void main() {
