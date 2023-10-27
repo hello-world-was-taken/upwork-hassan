@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/square_bullet_and_text_widget.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/term_holder.dart';
 
@@ -144,18 +145,77 @@ borderRadius: BorderRadius.circular(5.r)
                          bulletText(text: "個人情報の開示や訂正等について"),
                         termHolder(text: """お客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、削除および利用停止のご請求があった場合は、ご本人であること（またはその代理人の方であること）を確認のうえ、法令等にしたがって速やかに対応いたします。ただし、以下の事例に該当する場合はその限りではありません。"""),
                          SizedBox(height: 25.h,) ,
+                        
+
+
+                        roundBulletText(text: "法令に基づき裁判所や警察等の公的機関から要請があった場合"),
+
+
+                        roundBulletText(text: "法令に特別の規定がある場合"),
+                        roundBulletText(text: "お客様の生命や身体、財産を損なうおそれがあり、本人の同意を得ることができない場合"),
+                        roundBulletText(text: "法令や弊社のご利用規約の場合"),
+                        roundBulletText(text: """注意事項に反する行動から、弊社の権利、財産またはサービスを保護または防禦する必要があり、本人の同意を得ることができない場合 
+                        
+    また、個人情報の内容に誤りがあり、ご本人から訂正や追加・削除および利用停止の請求がある場合、調査の上、速やかにこれらの請求に対応いたします。その際、ご本人であることが確認できない場合には、これらの請求に応じません。"""),
+
+
+
+
+
+
+                         bulletText(text: " 個人情報の第三者提供について"),
+                        termHolder(text: """弊社は、個人情報保護法等の法令に定めのある場合を除き、個人情報をあらかじめご本人の同意を得ることなく、第三者に提供いたしません。"""),
+                         SizedBox(height: 25.h,) ,
+
+                         bulletText(text: " 個人情報の委託について"),
+                        termHolder(text: """弊社は、個人情報の取り扱いの全部または一部を第三者に委託する場合は、当該第三者について厳正な調査を行い、取り扱いを委託された個人情報の安全管理が図られるよう当該第三者に対する必要かつ適切な監督を行います。"""),
+                         SizedBox(height: 25.h,) ,
+
+bulletText(text: " 個人情報の取扱に関するお問い合わせ先"),
+                        termHolder(text: """個人情報の開示や訂正および利用停止、その他個人情報に関するお問い合わせにつきましては、下記の窓口で受け付けております。
+株式会社サチ通商インターナショナル
+電子メール：info@sachitsusho.com"""),
+                         SizedBox(height: 25.h,) ,
 
                           ],
                         ),
                         )
                       ],
                     ),
-                  )
+                  ),
+    
     
               ],),
               
-              )
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10.h),
+                width: 350.w,
+                height: 70.h,
+                child: ElevatedButton(
+      onPressed: () {
+        // Add your desired functionality here
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0), // Set the border radius
+          ),
+        ),
+      ),
+      child: Text(
+        '同意して次へ進む',
+        
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18.sp
+        
+        ),
+      ),
+    )
               
+              ,)
             ],
           ),
         ),
