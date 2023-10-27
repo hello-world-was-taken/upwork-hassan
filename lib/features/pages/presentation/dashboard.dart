@@ -86,7 +86,7 @@ class _DashboardState extends State<Dashboard> {
                 height: 10.h,
               ),
               Container(
-                height: 300.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
@@ -108,69 +108,61 @@ class _DashboardState extends State<Dashboard> {
                         style: BorderStyle.solid),
                   ),
                 ),
-                child: Column(children: [
-                  Image(
-                    height: 50.h,
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/images/liquid.png"),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(5.h),
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(bottom: 5.h),
-                          width: double.infinity,
-                          height: 40.h,
-                          child: Text(
-                            "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(bottom: 5.h),
-                          width: double.infinity,
-                          height: 40.h,
-                          child: Text(
-                            "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(bottom: 5.h),
-                          width: double.infinity,
-                          height: 40.h,
-                          child: Text(
-                            "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                      ],
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.h),
+                  child: Column(children: [
+                    Image(
+                      height: 50.h,
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/liquid.png"),
                     ),
-                  ),
-                ]),
-              ),
-              Container(
-                height: 30.h,
-              ),
-              Container(
-                  height: 40.h,
-                  color: Color.fromARGB(255, 234, 255, 254),
-                  child: Center(
-                    child: Row(children: [
-                      Checkbox(value: true, onChanged: (checked) {}),
-                      Text(
-                        "株式会社サチ通商弊社」）は",
+                    Divider(
+                      color: Colors.grey.shade400,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5.h),
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                        ],
                       ),
-                    ]),
-                  )),
+                    ),
+                  ]),
+                ),
+              ),
             ],
           ),
         ),
