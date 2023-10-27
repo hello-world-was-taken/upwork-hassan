@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:upwork_hassan/features/pages/terms_and_conditions.dart';
+import 'package:upwork_hassan/features/pages/presentation/terms_and_conditions.dart';
 
 void main() {
   runApp(const MyApp());
