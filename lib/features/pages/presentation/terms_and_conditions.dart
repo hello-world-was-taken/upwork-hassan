@@ -74,15 +74,43 @@ borderRadius: BorderRadius.circular(5.r)
                       borderRadius: BorderRadius.circular(5.r),
                               border: Border.all(
           color: Color(0XFFe6e6e6), 
-          width: 2.0, 
+          width: 5.0, 
         ),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
                           "assets/images/logo_and_name.png",
+                          width: 300.w,
+                          height: 60.h,
+                        ),
+
                         
-                          height: 55.h,
+
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 10.h),
+                          child: Text(
+                                    "プライバシーポリシー",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 25.h
+                                    ),
+                                  
+                                  ),
+                        ),
+
+                        Container(
+                          
+
+                          child: Text(
+                                    "2023年10月16日改定",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15.h
+                                    ),
+                                  
+                                  ),
                         )
                       ],
                     ),
