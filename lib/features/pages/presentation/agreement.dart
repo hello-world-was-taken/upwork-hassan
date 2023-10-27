@@ -14,7 +14,8 @@ class _AgreementState extends State<Agreement> {
     final ScrollController _controller = new ScrollController();
 
     var reachEnd = false;
-    var selectedOption;
+    int selectedOption = 0;
+    var _radios = ["運転免許証", "在留カード", "マイナンバーカード（写真付き）"];
 
     _listener() {
       final maxScroll = _controller.position.maxScrollExtent;
@@ -47,107 +48,162 @@ class _AgreementState extends State<Agreement> {
 
     return Stack(children: [
       Positioned(
-        top: 0.0,
-        bottom: 50.0,
+        child: customAppBar(),
+        top: 0.h,
+        height: 50.h,
+        width: MediaQuery.of(context).size.width,
+      ),
+      Positioned(
+        top: 60.h,
+        bottom: 50.h,
         width: MediaQuery.of(context).size.width,
         child: Container(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.symmetric(horizontal: 24.h),
           child: ListView(
             children: [
-              Text("株式会社サチ通商インターナショナル（以下「弊社」）は"),
-              Container(
-                height: 40,
+              SizedBox(
+                height: 10.h,
+              ),
+              Text("ご提出いただく身分証明書を選択してください。"),
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                height: 40,
-                color: Colors.grey.shade100,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: Color(0xff757575),
+                  borderRadius: BorderRadius.circular(10.h),
+                ),
                 child: Center(
                   child: Text(
                     "株式会社サチ通商弊社」）は",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
               SizedBox(
-                height: 100,
+                height: 150.h,
                 child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (BuildContext context, int index) {
                     return Row(
                       children: <Widget>[
                         Radio(
-                          value: "option 1",
+                          value: index,
                           groupValue: selectedOption,
                           onChanged: (value) {
                             setState(() {
-                              selectedOption = value;
+                              selectedOption = value as int;
                             });
                           },
                         ),
-                        Text('株式会社」）は '),
+                        Text(_radios[index]),
                       ],
                     );
                   },
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                height: 40,
-                color: Colors.grey.shade100,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: Color(0xff757575),
+                  borderRadius: BorderRadius.circular(10.h),
+                ),
                 child: Center(
                   child: Text(
-                    "株式会社サチ通商弊社」）は",
+                    "ご注意事項",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                height: 200,
+                height: 250.h,
                 decoration: BoxDecoration(
-                  color: Colors.red.shade50,
+                  color: Color(0xffF4EAE9),
+                  borderRadius: BorderRadius.circular(10.h),
                   border: Border(
                     top: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
+                        color: Color(0xffD7C9C8),
+                        width: 5.h,
+                        style: BorderStyle.solid),
                     left: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
+                        color: Color(0xffD7C9C8),
+                        width: 5.h,
+                        style: BorderStyle.solid),
                     right: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
+                        color: Color(0xffD7C9C8),
+                        width: 5.h,
+                        style: BorderStyle.solid),
                     bottom: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
+                        color: Color(0xffD7C9C8),
+                        width: 5.h,
+                        style: BorderStyle.solid),
                   ),
                 ),
                 child: Container(
                   padding: EdgeInsets.all(5.h),
-                  child: Column(children: [
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                  ]),
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(8.h),
+                        width: double.infinity,
+                        height: 50.h,
+                        child: Text(
+                          "■ 申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(8.h),
+                        width: double.infinity,
+                        height: 50.h,
+                        child: Text(
+                          "■ 規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(8.h),
+                        width: double.infinity,
+                        height: 50.h,
+                        child: Text(
+                          "■ カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                  height: 40,
-                  color: Colors.grey.shade100,
-                  child: Center(
-                    child: Text(
-                      "株式会社サチ通商弊社」）は",
-                    ),
-                  )),
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: Color(0xff757575),
+                  borderRadius: BorderRadius.circular(10.h),
+                ),
+                child: Center(
+                  child: Text(
+                    "注意事項を確認しました。",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -155,19 +211,40 @@ class _AgreementState extends State<Agreement> {
       Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          margin: EdgeInsets.all(5.h),
+          margin: EdgeInsets.all(24.h),
           width: double.infinity,
-          height: 50.h,
+          height: 60.h,
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 67, 165, 204),
-              borderRadius: BorderRadius.circular(5.r)),
+              color: Colors.black, borderRadius: BorderRadius.circular(5.r)),
           child: Center(
               child: Text(
-            "プライバシーポリシー",
+            "次へ進む",
             style: TextStyle(color: Colors.white, fontSize: 20.h),
           )),
         ),
       )
     ]);
+  }
+}
+
+class customAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const customAppBar({super.key});
+  @override
+  Size get preferredSize => Size.fromHeight(60);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.black,
+      title: Container(
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            "ご本人確認書類の選択",
+            style: TextStyle(color: Colors.white, fontSize: 25.h),
+          ),
+        ),
+      ),
+    );
   }
 }

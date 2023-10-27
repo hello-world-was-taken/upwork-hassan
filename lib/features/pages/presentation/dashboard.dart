@@ -1,5 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/loggedin_app_bar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -14,6 +15,7 @@ class _DashboardState extends State<Dashboard> {
     final ScrollController _controller = new ScrollController();
 
     var reachEnd = false;
+    int selectedOption = 0;
 
     _listener() {
       final maxScroll = _controller.position.maxScrollExtent;
@@ -46,54 +48,141 @@ class _DashboardState extends State<Dashboard> {
 
     return Stack(children: [
       Positioned(
+        child: LoggedInAppBar(imageUrl: "..."),
         top: 0.0,
-        bottom: 50.0,
+        height: 50.h,
         width: MediaQuery.of(context).size.width,
-        child: ListView(
-          children: [
-            LoggedInAppBar(
-              imageUrl: "",
-            ),
-          ],
+      ),
+      Positioned(
+        top: 50.h,
+        bottom: 50.h,
+        width: MediaQuery.of(context).size.width,
+        child: Container(
+          padding: EdgeInsets.all(8.h),
+          child: ListView(
+            children: [
+              Text(
+                "株式会社サチ通商インターナショナル（以下「",
+                style: TextStyle(height: 1.5),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text("株式会社サチ通商インターナショナル（以下「弊社」）は 株式会社サチ通",
+                  style: TextStyle(height: 1.5)),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                height: 40.h,
+                color: Colors.grey.shade100,
+                child: Center(
+                  child: Text(
+                    "株式会社サチ通商弊社」）は",
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                height: 500.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border(
+                    top: BorderSide(
+                        color: Colors.grey.shade400,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    left: BorderSide(
+                        color: Colors.grey.shade400,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    right: BorderSide(
+                        color: Colors.grey.shade400,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    bottom: BorderSide(
+                        color: Colors.grey.shade400,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.h),
+                  child: Column(children: [
+                    Image(
+                      height: 50.h,
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/liquid.png"),
+                    ),
+                    Divider(
+                      color: Colors.grey.shade400,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5.h),
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 5.h),
+                            width: double.infinity,
+                            height: 40.h,
+                            child: Text(
+                              "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       Align(
-          alignment: Alignment.bottomCenter,
-          child: ElevatedButton(
-            child: Text("button"),
-            onPressed: reachEnd ? () => {} : () => {},
-          ))
-    ]);
-  }
-}
-
-class LoggedInAppBar extends StatelessWidget {
-  const LoggedInAppBar({super.key, required String imageUrl});
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-        key: key,
-        title: Text(
-          "Himatif App",
-          style: TextStyle(fontFamily: 'Strasua'),
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          margin: EdgeInsets.all(5.h),
+          width: double.infinity,
+          height: 60.h,
+          decoration: BoxDecoration(
+              color: Color.fromARGB(255, 67, 165, 204),
+              borderRadius: BorderRadius.circular(5.r)),
+          child: Center(
+              child: Text(
+            "プライバシーポリシー",
+            style: TextStyle(color: Colors.white, fontSize: 20.h),
+          )),
         ),
-        backgroundColor: Color(0xff3a3637),
-        actions: <Widget>[
-          InkWell(
-            onTap: () {},
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(60),
-              child: CachedNetworkImage(
-                  width: 120,
-                  height: 120,
-                  fit: BoxFit.cover,
-                  imageUrl: "...",
-                  placeholder: (context, url) => Image(
-                      image:
-                          AssetImage("assets/images/profile_placeholder.jpg"))),
-            ),
-          )
-        ]);
+      )
+    ]);
   }
 }
