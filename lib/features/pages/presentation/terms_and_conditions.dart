@@ -189,8 +189,9 @@ bulletText(text: " 個人情報の取扱に関するお問い合わせ先"),
               
               ),
               Container(
+                margin: EdgeInsets.only(top: 10.h),
                 width: 350.w,
-                height: 100.h,
+                height: 70.h,
                 child: ElevatedButton(
       onPressed: () {
         // Add your desired functionality here
@@ -203,11 +204,13 @@ bulletText(text: " 個人情報の取扱に関するお問い合わせ先"),
           ),
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          'Custom Button',
-          style: TextStyle(color: Colors.white),
+      child: Text(
+        '同意して次へ進む',
+        
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18.sp
+        
         ),
       ),
     )
