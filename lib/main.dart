@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       designSize: Size(390, 844),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(body: TermsAndConditions()),
+        home: TermsAndConditions()
+          
       ),
     );
   }

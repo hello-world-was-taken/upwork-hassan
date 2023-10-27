@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/agreement.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/square_bullet_and_text_widget.dart';
@@ -16,7 +17,9 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      
       child: Scaffold(
+        backgroundColor: Color(0XFFf5f5f5),
         appBar: CustomAppBar(),
         body: SingleChildScrollView(
           child: Column(
@@ -73,12 +76,12 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
+                            margin: EdgeInsets.symmetric(vertical: 10.h),
                             width: double.infinity,
                             color: Colors.red,
                             child: Image.asset(
-                              "assets/images/logo_and_name.png",
+                              "assets/images/new.jpg",
                               width: 300.w,
-                              height: 60.h,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -101,7 +104,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(bottom: 5.h),
+                                  margin: EdgeInsets.symmetric(vertical: 10.h),
                                   child: Text(
                                     "2023年10月16日改定",
                                     style: TextStyle(
@@ -182,7 +185,10 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 height: 70.h,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Add your desired functionality here
+                      Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Agreement()),
+  );
                   },
                   style: ButtonStyle(
                     backgroundColor:

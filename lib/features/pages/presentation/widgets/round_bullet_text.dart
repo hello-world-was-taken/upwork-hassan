@@ -11,7 +11,7 @@ class RoundBulletText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(right: 5.w.w, top: 10.h),
+          margin: EdgeInsets.only(right: 5.w, top: 10.h),
           child: CircleAvatar(
             radius: 3.r,
             backgroundColor: Colors.black,
