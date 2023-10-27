@@ -109,31 +109,24 @@ class _AgreementState extends State<Agreement> {
                 decoration: BoxDecoration(
                   color: Colors.red.shade50,
                   border: Border(
-                    top: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
-                    left: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
-                    right: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
-                    bottom: BorderSide(
-                        color: Colors.red, width: 2, style: BorderStyle.solid),
+                    top: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
+                    left: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
+                    right: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
+                    bottom: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
                   ),
                 ),
                 child: Container(
                   padding: EdgeInsets.all(5.h),
                   child: Column(children: [
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
+                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
+                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
-                        "■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
+                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
                   ]),
                 ),
               ),
@@ -159,8 +152,7 @@ class _AgreementState extends State<Agreement> {
           width: double.infinity,
           height: 50.h,
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 67, 165, 204),
-              borderRadius: BorderRadius.circular(5.r)),
+              color: Color.fromARGB(255, 67, 165, 204), borderRadius: BorderRadius.circular(5.r)),
           child: Center(
               child: Text(
             "プライバシーポリシー",
