@@ -14,7 +14,7 @@ class _AgreementState extends State<Agreement> {
     final ScrollController _controller = new ScrollController();
 
     var reachEnd = false;
-    var selectedOption;
+    int selectedOption = 0;
 
     _listener() {
       final maxScroll = _controller.position.maxScrollExtent;
@@ -51,15 +51,15 @@ class _AgreementState extends State<Agreement> {
         bottom: 50.0,
         width: MediaQuery.of(context).size.width,
         child: Container(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(8.h),
           child: ListView(
             children: [
               Text("株式会社サチ通商インターナショナル（以下「弊社」）は"),
               Container(
-                height: 40,
+                height: 10.h,
               ),
               Container(
-                height: 40,
+                height: 40.h,
                 color: Colors.grey.shade100,
                 child: Center(
                   child: Text(
@@ -68,18 +68,18 @@ class _AgreementState extends State<Agreement> {
                 ),
               ),
               SizedBox(
-                height: 100,
+                height: 150.h,
                 child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (BuildContext context, int index) {
                     return Row(
                       children: <Widget>[
                         Radio(
-                          value: "option 1",
+                          value: index,
                           groupValue: selectedOption,
                           onChanged: (value) {
                             setState(() {
-                              selectedOption = value;
+                              selectedOption = value as int;
                             });
                           },
                         ),
@@ -90,10 +90,10 @@ class _AgreementState extends State<Agreement> {
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                height: 40,
+                height: 40.h,
                 color: Colors.grey.shade100,
                 child: Center(
                   child: Text(
@@ -102,44 +102,86 @@ class _AgreementState extends State<Agreement> {
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                height: 200,
+                height: 200.h,
                 decoration: BoxDecoration(
                   color: Colors.red.shade50,
                   border: Border(
-                    top: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
-                    left: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
-                    right: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
-                    bottom: BorderSide(color: Colors.red, width: 2, style: BorderStyle.solid),
+                    top: BorderSide(
+                        color: Colors.red.shade200,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    left: BorderSide(
+                        color: Colors.red.shade200,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    right: BorderSide(
+                        color: Colors.red.shade200,
+                        width: 2.h,
+                        style: BorderStyle.solid),
+                    bottom: BorderSide(
+                        color: Colors.red.shade200,
+                        width: 2.h,
+                        style: BorderStyle.solid),
                   ),
                 ),
                 child: Container(
                   padding: EdgeInsets.all(5.h),
-                  child: Column(children: [
-                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("■ 個人情報の開示や訂正等についてお客様ご本人、またはその代理人の方より、弊社が保有するお客様ご本人に関する個人情報の開示や訂正、追加、"),
-                  ]),
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5.h),
+                        width: double.infinity,
+                        height: 40.h,
+                        child: Text(
+                          "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5.h),
+                        width: double.infinity,
+                        height: 40.h,
+                        child: Text(
+                          "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5.h),
+                        width: double.infinity,
+                        height: 40.h,
+                        child: Text(
+                          "■ 個人情報の開示や訂正等についてお客様ご本人個人情報の開示や訂正、追加、",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                height: 30,
+                height: 30.h,
               ),
               Container(
-                  height: 40,
-                  color: Colors.grey.shade100,
+                  height: 40.h,
+                  color: Color.fromARGB(255, 234, 255, 254),
                   child: Center(
-                    child: Text(
-                      "株式会社サチ通商弊社」）は",
-                    ),
+                    child: Row(children: [
+                      Checkbox(value: true, onChanged: (checked) {}),
+                      Text(
+                        "株式会社サチ通商弊社」）は",
+                      ),
+                    ]),
                   )),
             ],
           ),
@@ -150,9 +192,10 @@ class _AgreementState extends State<Agreement> {
         child: Container(
           margin: EdgeInsets.all(5.h),
           width: double.infinity,
-          height: 50.h,
+          height: 60.h,
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 67, 165, 204), borderRadius: BorderRadius.circular(5.r)),
+              color: Color.fromARGB(255, 67, 165, 204),
+              borderRadius: BorderRadius.circular(5.r)),
           child: Center(
               child: Text(
             "プライバシーポリシー",

@@ -11,17 +11,11 @@ class customAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.black,
       title: Container(
-        
         width: double.infinity,
-        
         child: Center(
           child: Text(
             "ご利用規約",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 25.h
-            ),
-          
+            style: TextStyle(color: Colors.white, fontSize: 25.h),
           ),
         ),
       ),

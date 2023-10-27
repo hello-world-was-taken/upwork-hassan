@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: termsAndConditions()
-          ),
+          body: Dashboard(),
+        ),
       ),
     );
   }
