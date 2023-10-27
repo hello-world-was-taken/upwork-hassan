@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class termHolder extends StatelessWidget {
   final String text;
@@ -10,7 +11,7 @@ class termHolder extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          
+          fontSize: 18.h
         ),
       ),
     );
