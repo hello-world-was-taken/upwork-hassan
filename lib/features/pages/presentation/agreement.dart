@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
 class Agreement extends StatefulWidget {
@@ -50,9 +51,9 @@ class _AgreementState extends State<Agreement> {
     }
 
     return Scaffold(
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(text: "ご本人確認書類の選択"),
         body: Container(
-            margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
+            margin: EdgeInsets.symmetric(vertical: 40.h, horizontal: 20.w),
             child: Stack(children: [
               SingleChildScrollView(
                 child: Column(children: [
@@ -70,7 +71,6 @@ class _AgreementState extends State<Agreement> {
                   Container(
                     height: 180.h,
                     child: ListView.builder(
-                      
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int index) {
                         return Row(
@@ -89,7 +89,8 @@ class _AgreementState extends State<Agreement> {
                             ),
                             Expanded(
                               child: Container(
-                                margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 5.w),
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 10.h, horizontal: 5.w),
                                 child: Text(_radios[index],
                                     style: TextStyle(fontSize: 20.h)),
                               ),
@@ -107,27 +108,13 @@ class _AgreementState extends State<Agreement> {
                     height: 30.h,
                   ),
                   Container(
-                    height: 250.h,
+                    height: 260.h,
                     decoration: BoxDecoration(
                       color: Color(0xffF4EAE9),
                       borderRadius: BorderRadius.circular(10.h),
-                      border: Border(
-                        top: BorderSide(
-                            color: Color(0xffD7C9C8),
-                            width: 5.h,
-                            style: BorderStyle.solid),
-                        left: BorderSide(
-                            color: Color(0xffD7C9C8),
-                            width: 5.h,
-                            style: BorderStyle.solid),
-                        right: BorderSide(
-                            color: Color(0xffD7C9C8),
-                            width: 5.h,
-                            style: BorderStyle.solid),
-                        bottom: BorderSide(
-                            color: Color(0xffD7C9C8),
-                            width: 5.h,
-                            style: BorderStyle.solid),
+                      border: Border.all(
+                        color: Color(0xffD7C9C8),
+                        width: 7,
                       ),
                     ),
                     child: Container(
@@ -135,39 +122,26 @@ class _AgreementState extends State<Agreement> {
                       width: double.infinity,
                       child: Column(
                         children: [
-                          Expanded(
-                            child: Text(
-                              "■ 申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontSize: 20.h),
-                            ),
-                          ),
+                          RoundBulletText(
+                              text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
                           SizedBox(
                             height: 10.h,
                           ),
-                          Expanded(
-                            child: Text(
-                              "■ 規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。",
-                              style: TextStyle(fontSize: 20.h),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
+                          RoundBulletText(
+                              text:
+                                  "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
                           SizedBox(
                             height: 10.h,
                           ),
-                          Expanded(
-                            child: Text(
-                              "■ カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。",
-                              style: TextStyle(fontSize: 20.h),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
+                          RoundBulletText(
+                              text:
+                                  "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
                         ],
                       ),
                     ),
                   ),
-                  Container(
-                    height: 30.h,
+                  SizedBox(
+                    height: 40.h,
                   ),
                   SecondaryColorHeading(title: "注意事項を確認しました。"),
                   SizedBox(

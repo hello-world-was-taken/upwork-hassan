@@ -13,13 +13,13 @@ class SecondaryColorHeading extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 25.h),
       width: double.infinity,
-      height: 50.h,
+      height: 60.h,
       decoration: BoxDecoration(
           color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
       child: Center(
           child: Text(
         title,
-        style: TextStyle(color: Colors.white, fontSize: 20.h),
+        style: TextStyle(color: Colors.white, fontSize: 25.h),
       )),
     );
   }

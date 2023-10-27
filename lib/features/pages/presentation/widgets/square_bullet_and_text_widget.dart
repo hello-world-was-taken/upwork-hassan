@@ -7,24 +7,29 @@ class BulletText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: EdgeInsets.only(right: 10, top: 8.h),
-          color: Colors.black,
-          width: 12,
-          height: 15,
-        ),
-        Flexible(
-          child: Container(
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 18.h),
+    return Container(
+      margin: EdgeInsets.only(bottom: 5.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(right: 10,),
+            color: Colors.black,
+            width: 12,
+            height: 12,
+          ),
+          Flexible(
+            child: Container(
+              child: Text(
+                text,
+                style: TextStyle(fontSize: 18.h,
+                ),
+              
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -21,7 +21,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFFf5f5f5),
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(text: "ご利用規約"),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -30,20 +30,18 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(bottom: 5.h),
+                      margin: EdgeInsets.only(bottom: 40.h),
                       width: double.infinity,
-                      height: 100.h,
                       child: Text(
                         "株式会社サチ通商インターナショナルが本人認証 サービスを提供いたします。",
                         style: TextStyle(
-                          fontSize: 20.h,
+                          fontSize: 25.h,
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(bottom: 5.h),
+                      margin: EdgeInsets.only(bottom: 20.h),
                       width: double.infinity,
-                      height: 100.h,
                       child: Text(
                         "プライバシーポリシーと利用規約を最後までお読 みになり、下のボタンから次へお進みください。",
                         style: TextStyle(
@@ -149,9 +147,14 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                                 ),
                                 BulletText(text: " 個人情報の取扱に関するお問い合わせ先"),
                                 TermHolder(
-                                    text:
-                                        """個人情報の開示や訂正および利用停止、その他個人情報に関するお問い合わせにつきましては、下記の窓口で受け付けております。
-株式会社サチ通商インターナショナル 電子メール：info@sachitsusho.com"""),
+                                  text:
+                                      """個人情報の開示や訂正および利用停止、その他個人情報に関するお問い合わせにつきましては、下記の窓口で受け付けております。
+株式会社サチ通商インターナショナル 電子メール：""",
+                                  richText: "info@sachitsusho.com",
+                                  richTextStyle: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 SizedBox(
                                   height: 25.h,
                                 ),
