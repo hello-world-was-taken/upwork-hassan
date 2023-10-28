@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/camera_page.dart';
 import 'package:upwork_hassan/features/pages/presentation/terms_and_conditions.dart';
 import 'package:upwork_hassan/features/pages/presentation/usage_demo.dart';
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'MsGothic'),
-          home: CameraPage()),
+          home: TermsAndConditions()),
     );
   }
 }

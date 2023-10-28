@@ -1,5 +1,7 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/usage_demo.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
 class AppDimension {
@@ -10,13 +12,13 @@ class AppDimension {
   }
 
   static height(double requiredHeight, BuildContext context) {
-    return MediaQuery.of(context).size.height /
-        (myDeviceHeight / requiredHeight);
+    return MediaQuery.of(context).size.height / (myDeviceHeight / requiredHeight);
   }
 }
 
 class AccessRequest extends StatelessWidget {
-  const AccessRequest({super.key});
+  AccessRequest({super.key});
+  late CameraController _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -46,21 +48,31 @@ class AccessRequest extends StatelessWidget {
               padding: EdgeInsets.all(10.h),
               width: double.infinity,
               height: 60.h,
-              decoration: BoxDecoration(
-                  color: Color(0XFF757575),
-                  borderRadius: BorderRadius.circular(5.r)),
+              decoration:
+                  BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
               child: Container(
-                padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width - 100.h),
+                padding: EdgeInsets.only(left: MediaQuery.of(context).size.width - 100.h),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    availableCameras().then((cameras) async {
+                      final firstCamera = cameras.first;
+                      _controller = CameraController(firstCamera, ResolutionPreset.high);
+                      await _controller.initialize();
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UsageDemo(
+                                  cameraController: _controller,
+                                )),
+                      );
+                    });
+                  },
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            10.r), // Set the border radius
+                        borderRadius: BorderRadius.circular(10.r), // Set the border radius
                       ),
                     ),
                   ),

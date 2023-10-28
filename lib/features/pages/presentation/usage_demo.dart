@@ -1,8 +1,11 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/camera_page.dart';
 
 class UsageDemo extends StatelessWidget {
-  const UsageDemo({super.key});
+  final CameraController cameraController;
+  const UsageDemo({super.key, required this.cameraController});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "撮影｜運転免許証｜表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               Container(
                 height: 5.h,
@@ -30,7 +33,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               SizedBox(height: 30.h),
               Container(
@@ -46,7 +49,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "免許証の外形が確認しやすいように背景は白以外で撮影してください",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               SizedBox(height: 30.h),
               Container(
@@ -54,14 +57,20 @@ class UsageDemo extends StatelessWidget {
                 width: 250.w,
                 height: 70.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CameraPage(
+                                cameraController: cameraController,
+                              )),
+                    );
+                  },
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            25.h), // Set the border radius
+                        borderRadius: BorderRadius.circular(25.h), // Set the border radius
                       ),
                     ),
                   ),

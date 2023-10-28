@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
@@ -113,7 +114,12 @@ class _AgreementState extends State<Agreement> {
                 Align(
                     alignment: Alignment.bottomCenter,
                     child: ActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AccessRequest()),
+                        );
+                      },
                       text: '次へ進む',
                     ))
               ]))),
