@@ -7,10 +7,7 @@ class TermHolder extends StatelessWidget {
   final TextStyle richTextStyle;
 
   const TermHolder(
-      {super.key,
-      required this.text,
-      this.richText = "",
-      this.richTextStyle = const TextStyle()});
+      {super.key, required this.text, this.richText = "", this.richTextStyle = const TextStyle()});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class TermHolder extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: text,
-          style: TextStyle(fontSize: 18.h, color: Colors.black),
+          style: TextStyle(fontSize: 18.h, color: Colors.black, fontFamily: 'MsGothic'),
           children: <TextSpan>[
             TextSpan(text: richText, style: richTextStyle),
           ],
