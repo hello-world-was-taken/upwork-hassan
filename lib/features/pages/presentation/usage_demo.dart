@@ -16,7 +16,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "撮影｜運転免許証｜表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               Container(
                 height: 5.h,
@@ -30,7 +30,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               SizedBox(height: 30.h),
               Container(
@@ -46,7 +46,7 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "免許証の外形が確認しやすいように背景は白以外で撮影してください",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: 18.sp),
               ),
               SizedBox(height: 30.h),
               Container(
