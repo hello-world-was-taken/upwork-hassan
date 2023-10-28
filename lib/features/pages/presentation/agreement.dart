@@ -77,7 +77,6 @@ class _AgreementState extends State<Agreement> {
                       height: 30.h,
                     ),
                     Container(
-                      height: 260.h,
                       decoration: BoxDecoration(
                         color: Color(0xffF4EAE9),
                         borderRadius: BorderRadius.circular(10.h),
