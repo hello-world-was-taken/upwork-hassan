@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ActionButton extends StatelessWidget {
   final Function onPressed;
+  final String text;
   const ActionButton({
     required this.onPressed,
+    required this.text,
     super.key,
   });
 
@@ -22,13 +24,12 @@ class ActionButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(10.0), // Set the border radius
+              borderRadius: BorderRadius.circular(10.0), // Set the border radius
             ),
           ),
         ),
         child: Text(
-          '同意して次へ進む',
+          text,
           style: TextStyle(color: Colors.white, fontSize: 18.sp),
         ),
       ),

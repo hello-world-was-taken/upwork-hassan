@@ -58,10 +58,8 @@ class _AgreementState extends State<Agreement> {
                               ),
                               Expanded(
                                 child: Container(
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 10.h, horizontal: 5.w),
-                                  child: Text(_radios[index],
-                                      style: TextStyle(fontSize: 20.h)),
+                                  margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 5.w),
+                                  child: Text(_radios[index], style: TextStyle(fontSize: 20.h)),
                                 ),
                               ),
                             ],
@@ -90,21 +88,15 @@ class _AgreementState extends State<Agreement> {
                         width: double.infinity,
                         child: Column(
                           children: [
-                            RoundBulletText(
-                                text:
-                                    "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: 10.h,
                             ),
-                            RoundBulletText(
-                                text:
-                                    "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: 10.h,
                             ),
-                            RoundBulletText(
-                                text:
-                                    "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+                            RoundBulletText(text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
                           ],
                         ),
                       ),
@@ -122,6 +114,7 @@ class _AgreementState extends State<Agreement> {
                     alignment: Alignment.bottomCenter,
                     child: ActionButton(
                       onPressed: () {},
+                      text: '次へ進む',
                     ))
               ]))),
     );

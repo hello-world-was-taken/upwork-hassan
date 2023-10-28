@@ -119,12 +119,9 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                                 SizedBox(
                                   height: 25.h,
                                 ),
-                                RoundBulletText(
-                                    text: "法令に基づき裁判所や警察等の公的機関から要請があった場合"),
+                                RoundBulletText(text: "法令に基づき裁判所や警察等の公的機関から要請があった場合"),
                                 RoundBulletText(text: "法令に特別の規定がある場合"),
-                                RoundBulletText(
-                                    text:
-                                        "お客様の生命や身体、財産を損なうおそれがあり、本人の同意を得ることができない場合"),
+                                RoundBulletText(text: "お客様の生命や身体、財産を損なうおそれがあり、本人の同意を得ることができない場合"),
                                 RoundBulletText(text: "法令や弊社のご利用規約の場合"),
                                 RoundBulletText(
                                     text:
@@ -177,6 +174,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                     MaterialPageRoute(builder: (context) => const Agreement()),
                   );
                 },
+                text: '同意して次へ進む',
               ),
               SizedBox(
                 height: 25.h,
