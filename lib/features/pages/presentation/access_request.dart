@@ -60,7 +60,7 @@ class AccessRequest extends StatelessWidget {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
-                            10.0), // Set the border radius
+                            10.r), // Set the border radius
                       ),
                     ),
                   ),
