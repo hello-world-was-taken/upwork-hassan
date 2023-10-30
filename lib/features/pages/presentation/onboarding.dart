@@ -98,6 +98,7 @@ class ProgressIndicator extends StatelessWidget {
                   ? Container(
                       height: 5.h,
                       width: 40.w,
+                      margin: EdgeInsets.only(top: 5.h),
                       color:
                           stage - 1 < index ? Color(0XFF757575) : Colors.black,
                     )
@@ -191,25 +192,29 @@ class _CustomeCardState extends State<CustomCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.title,
-          textAlign: TextAlign.right,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
+        Container(
+          margin: EdgeInsets.only(left: 20.h),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         widget.subtitle != null
-            ? Text(
-                widget.subtitle,
-                style: TextStyle(
-                  color: Colors.black,
+            ? Container(
+                margin: EdgeInsets.only(left: 25.h),
+                child: Text(
+                  widget.subtitle,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
                 ),
               )
             : const SizedBox.shrink(),
         Container(
           height: 50.h,
-          alignment: Alignment.topCenter,
           child: ListView.builder(
             itemCount: widget.options.length,
             scrollDirection: Axis.horizontal,
