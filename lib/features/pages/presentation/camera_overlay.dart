@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/popup_widget.dart';
 
 class CameraOverlay extends StatefulWidget {
   const CameraOverlay({super.key});
@@ -9,6 +10,18 @@ class CameraOverlay extends StatefulWidget {
 }
 
 class _CameraOverlayState extends State<CameraOverlay> {
+   bool _showPopup = true;
+
+     @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 5), () {
+      setState(() {
+        _showPopup = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,20 +34,19 @@ class _CameraOverlayState extends State<CameraOverlay> {
             ),
             child: Column(
               children: [
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 35.w
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("撮影",
+                      Text("撮影|",
                       
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30.h
                       ),),
-                      Text("運転免許証",
+                      Text(
+                        "運転免許証|",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30.h
@@ -48,7 +60,7 @@ class _CameraOverlayState extends State<CameraOverlay> {
                       )
                     ],
                   ),
-                ),
+                
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 20.h),
                   decoration: BoxDecoration(
@@ -67,24 +79,47 @@ borderRadius: BorderRadius.circular(10)
                       )
                   ),
                 ),
-                Image.asset("assets/images/cameraCenter.png"),
-                Container(
-                  
-                  width: 130,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color:Colors.white,
-                    borderRadius: BorderRadius.circular(25),
-                    
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.camera_alt,
-                      color: Colors.black,
-                      size: 60.h,
+                SizedBox(
+                  height: 120.h,
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      width: 300.w,
+                      child: Image.asset("assets/images/cameraCenter.png",
+                      fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                )
+                    if (_showPopup)
+                      Positioned(
+                        top: 60.h,
+                        left: 10.w,
+                        child: PopupCard()
+                        )
+                    
+
+                  ],
+                ),
+                 SizedBox(
+                  height: 120.h,
+                ),
+                ElevatedButton(
+  onPressed: () {
+    
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(25),
+    ),
+    minimumSize: Size(120.w, 80.h),
+  ),
+  child: Icon(
+    Icons.camera_alt,
+    color: Colors.black,
+    size: 60.h,
+  ),
+)
               ],
             ),
           ),
