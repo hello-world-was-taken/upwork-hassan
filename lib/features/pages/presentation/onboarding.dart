@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -29,7 +30,7 @@ class _OnBoardingState extends State<OnBoarding> {
   Widget build(BuildContext context) {
     var _pages = [
       FirstStepPage(),
-      SecondStepPage(next: incrementStage),
+      SecondStepPage(),
       ThirdStepPage(next: incrementStage),
       FourthStepPage(next: incrementStage)
     ];
@@ -140,13 +141,84 @@ class FirstStepPage extends StatelessWidget {
   }
 }
 
-class SecondStepPage extends StatelessWidget {
-  final next;
-  const SecondStepPage({super.key, required this.next});
+class SecondStepPage extends StatefulWidget {
+  const SecondStepPage({super.key});
 
   @override
+  State<SecondStepPage> createState() => _SecondStepPageState();
+}
+
+class _SecondStepPageState extends State<SecondStepPage> {
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Flexible(
+      child: ListView(
+        shrinkWrap: true,
+        children: [
+          Text(
+            "Header...",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            "sub Header...",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12.sp),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          SecondaryColorHeading(title: "54,000"),
+          SizedBox(
+            height: 10.h,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter ...',
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(2.r), // Set the border radius
+                    ),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(10.r),
+                  margin: EdgeInsets.only(left: 5.w),
+                  child: Text(
+                    'button',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          RoundBulletText(text: "...."),
+          RoundBulletText(text: "...."),
+          RoundBulletText(text: "...."),
+        ],
+      ),
+    );
   }
 }
 
