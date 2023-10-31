@@ -4,7 +4,8 @@ import 'package:upwork_hassan/core/utils/app_dimension.dart';
 
 class RoundBulletText extends StatelessWidget {
   final String text;
-  const RoundBulletText({super.key, required this.text});
+  final size;
+  const RoundBulletText({super.key, required this.text, this.size = null});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,5 @@ class RoundBulletText extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
