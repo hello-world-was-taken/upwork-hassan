@@ -107,7 +107,8 @@ class _CameraOverlayState extends State<CameraOverlay> {
                     height: AppDimension.height(120, context),
                   ),
                   Container(
-                    width: AppDimension.width(40, context),
+                    width: AppDimension.width(60, context),
+                    height: AppDimension.height(50, context),
                     child: ElevatedButton(
                               onPressed: () {
                                 
@@ -119,10 +120,12 @@ class _CameraOverlayState extends State<CameraOverlay> {
                                 ),
                                 minimumSize: Size(AppDimension.width(120, context), AppDimension.height(20, context)),
                               ),
-                              child: Icon(
-                                Icons.camera_alt,
-                                color: Colors.black,
-                                size: AppDimension.height(60, context),
+                              child: Center(
+                                child: Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.black,
+                                  size: AppDimension.radius(50, context),
+                                ),
                               ),
                             ),
                   )
