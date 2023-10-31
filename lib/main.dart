@@ -19,13 +19,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsFlutterBinding.ensureInitialized();
-    return ScreenUtilInit(
-      designSize: Size(390, 844),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: 'MsGothic'),
-        home: TermsAndConditions(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'MsGothic'),
+      home: TermsAndConditions(),
     );
   }
 }

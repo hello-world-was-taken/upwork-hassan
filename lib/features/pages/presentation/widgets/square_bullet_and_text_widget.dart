@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BulletText extends StatelessWidget {
   final String text;
@@ -8,7 +9,7 @@ class BulletText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 5.h),
+      margin: EdgeInsets.only(bottom: AppDimension.height(5, context)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -22,7 +23,7 @@ class BulletText extends StatelessWidget {
             child: Container(
               child: Text(
                 text,
-                style: TextStyle(fontSize: 18.h,
+                style: TextStyle(fontSize: AppDimension.height(18, context),
                 ),
               
               ),

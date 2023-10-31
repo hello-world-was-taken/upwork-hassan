@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryColorHeading extends StatelessWidget {
   final String title;
@@ -11,15 +12,16 @@ class SecondaryColorHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.only(bottom: 25.h),
-      padding: EdgeInsets.only(top: 15.h),
+      // padding: EdgeInsets.only(top: AppDimension.height(15, context)),
       width: double.infinity,
-      height: 60.h,
+      height: AppDimension.height(60, context),
       decoration: BoxDecoration(
-          color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
-      child: Text(
-        title,
-        style: TextStyle(color: Colors.white, fontSize: 25.h),
+          color: Color(0XFF757575), borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
+      child: Center(
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.white, fontSize: AppDimension.height(25, context)),
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
 import 'package:upwork_hassan/features/pages/presentation/onboarding.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
@@ -24,30 +25,31 @@ class _AgreementState extends State<Agreement> {
       child: Scaffold(
           appBar: CustomAppBar(text: "ご本人確認書類の選択"),
           body: Container(
-              margin: EdgeInsets.symmetric(vertical: 40.h, horizontal: 20.w),
+              margin: EdgeInsets.symmetric(vertical: AppDimension.height(40, context), horizontal: AppDimension.width(20, context)),
               child: Stack(children: [
                 SingleChildScrollView(
                   child: Column(children: [
                     SizedBox(
-                      height: 10.h,
+                      height: AppDimension.height(10, context),
                     ),
                     Text(
                       "ご提出いただく身分証明書を選択してください。",
-                      style: TextStyle(fontSize: 20.h),
+                      style: TextStyle(fontSize: AppDimension.height(20, context)),
                     ),
                     SizedBox(
-                      height: 20.h,
+                      height: AppDimension.height(20, context),
                     ),
                     SecondaryColorHeading(title: "株式会社サチ通商弊社」）は"),
                     Container(
-                      height: 180.h,
+                      height: AppDimension.height(280, context),
                       child: ListView.builder(
+                        
                         itemCount: 3,
                         itemBuilder: (BuildContext context, int index) {
                           return Row(
                             children: <Widget>[
                               Transform.scale(
-                                scale: 1.5.r,
+                                scale: AppDimension.radius(1.5, context),
                                 child: Radio(
                                   value: index,
                                   groupValue: selectedOption,
@@ -61,9 +63,10 @@ class _AgreementState extends State<Agreement> {
                               Expanded(
                                 child: Container(
                                   margin: EdgeInsets.symmetric(
-                                      vertical: 10.h, horizontal: 5.w),
+                                      vertical: AppDimension.height(20, context), 
+                                      horizontal: AppDimension.width(5, context)),
                                   child: Text(_radios[index],
-                                      style: TextStyle(fontSize: 20.h)),
+                                      style: TextStyle(fontSize: AppDimension.height(20, context))),
                                 ),
                               ),
                             ],
@@ -72,23 +75,23 @@ class _AgreementState extends State<Agreement> {
                       ),
                     ),
                     Container(
-                      height: 30.h,
+                      height: AppDimension.height(30, context),
                     ),
                     SecondaryColorHeading(title: "ご注意事項"),
                     Container(
-                      height: 30.h,
+                      height: AppDimension.height(30, context),
                     ),
                     Container(
                       decoration: BoxDecoration(
                         color: Color(0xffF4EAE9),
-                        borderRadius: BorderRadius.circular(10.h),
+                        borderRadius: BorderRadius.circular(AppDimension.height(10, context)),
                         border: Border.all(
                           color: Color(0xffD7C9C8),
                           width: 7,
                         ),
                       ),
                       child: Container(
-                        padding: EdgeInsets.all(25.h),
+                        padding: EdgeInsets.all(AppDimension.height(25, context)),
                         width: double.infinity,
                         child: Column(
                           children: [
@@ -96,13 +99,13 @@ class _AgreementState extends State<Agreement> {
                                 text:
                                     "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
-                              height: 10.h,
+                              height: AppDimension.height(10, context),
                             ),
                             RoundBulletText(
                                 text:
                                     "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
-                              height: 10.h,
+                              height: AppDimension.height(10, context),
                             ),
                             RoundBulletText(
                                 text:
@@ -112,11 +115,11 @@ class _AgreementState extends State<Agreement> {
                       ),
                     ),
                     SizedBox(
-                      height: 40.h,
+                      height: AppDimension.height(40, context),
                     ),
                     SecondaryColorHeading(title: "注意事項を確認しました。"),
                     SizedBox(
-                      height: 100.h,
+                      height: AppDimension.height(100, context),
                     )
                   ]),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
@@ -39,48 +40,50 @@ class _OnBoardingState extends State<OnBoarding> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 10.h),
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 10.h,
-              ),
-              ProgressIndicator(stage: stage),
-              SizedBox(
-                height: 20.h,
-              ),
-              Container(
-                color: Colors.white,
-                padding: EdgeInsets.all(10.h),
-                height: MediaQuery.of(context).size.height * 0.65,
-                child: _pages[stage],
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              stage > 0
-                  ? ActionButton(
-                      onPressed: () {
-                        decrementStage();
-                      },
-                      text: 'Prev',
-                    )
-                  : SizedBox.shrink(),
-              ActionButton(
-                onPressed: () {
-                  if (stage < 3)
-                    incrementStage();
-                  else
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AccessRequest()),
-                    );
-                },
-                text: 'Next',
-              ),
-            ],
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(40, context), vertical: AppDimension.height(10, context)),
+          // height: MediaQuery.of(context).size.height,
+          child: Container(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: AppDimension.height(10, context),
+                ),
+                ProgressIndicator(stage: stage),
+                SizedBox(
+                  height: AppDimension.height(20, context),
+                ),
+                Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.all(AppDimension.height(10, context)),
+                  
+                  child: _pages[stage],
+                ),
+                SizedBox(
+                  height: AppDimension.height(20, context),
+                ),
+                stage > 0
+                    ? ActionButton(
+                        onPressed: () {
+                          decrementStage();
+                        },
+                        text: 'Prev',
+                      )
+                    : SizedBox.shrink(),
+                ActionButton(
+                  onPressed: () {
+                    if (stage < 3)
+                      incrementStage();
+                    else
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AccessRequest()),
+                      );
+                  },
+                  text: 'Next',
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -95,7 +98,7 @@ class ProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50.h,
+      height: AppDimension.height(50, context),
       child: ListView.builder(
         itemCount: 4,
         shrinkWrap: true,
@@ -110,19 +113,19 @@ class ProgressIndicator extends StatelessWidget {
                   Icon(
                     stage <= index ? Icons.circle : Icons.check,
                     color: stage < index ? Color(0XFF757575) : Colors.black,
-                    size: 16.r,
+                    size: AppDimension.radius(16, context),
                   ),
                   Text(
                     "stage $index",
-                    style: TextStyle(fontSize: 20.h),
+                    style: TextStyle(fontSize: AppDimension.height(20, context)),
                   )
                 ],
               ),
               index < 3
                   ? Container(
-                      height: 5.h,
-                      width: 40.w,
-                      margin: EdgeInsets.only(top: 5.h),
+                      height: AppDimension.height(5, context),
+                      width: AppDimension.width(40, context),
+                      margin: EdgeInsets.only(top: AppDimension.height(5, context)),
                       color:
                           stage - 1 < index ? Color(0XFF757575) : Colors.black,
                     )
@@ -146,13 +149,13 @@ class FirstStepPage extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(
                 title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
                 options: ["申請の途", "申請の途"]),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(
               title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
@@ -160,19 +163,19 @@ class FirstStepPage extends StatelessWidget {
               options: ["途中で", "途中で"],
             ),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(title: "申請の途中でブラウザを閉じた場合", options: ["申請の途中", "申請の途中"]),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(title: "申請の途中でブラウザを閉じた場合は", options: ["申請の途中", "申請の途中"]),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(title: "申請の途中でブラウ", options: ["申請", "申請の"]),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             CustomCard(title: "申請の途中", options: ["申請の途中", "申請"]),
           ],
@@ -196,43 +199,43 @@ class _SecondStepPageState extends State<SecondStepPage> {
       shrinkWrap: true,
       children: [
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: AppDimension.height(15, context), fontWeight: FontWeight.bold),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場合は、最初からやり直。",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         Container(
           // margin: EdgeInsets.only(bottom: 25.h),
-          padding: EdgeInsets.only(top: 15.h),
+          padding: EdgeInsets.only(top: AppDimension.height(15, context)),
           width: double.infinity,
-          height: 60.h,
+          height: AppDimension.height(60, context),
           decoration: BoxDecoration(
               color: Color(0XFF757575),
-              borderRadius: BorderRadius.circular(5.r)),
+              borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
           child: Text(
             "54,000",
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontSize: 25.h),
+            style: TextStyle(color: Colors.white, fontSize: AppDimension.height(25, context)),
           ),
         ),
         SizedBox(
-          height: 10.h,
+          height:AppDimension.height(10, context),
         ),
         Container(
-          height: 60.h,
+          height: AppDimension.height(60, context),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
@@ -247,7 +250,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                 ),
               ),
               SizedBox(
-                width: 10.w,
+                width: AppDimension.width(10, context),
               ),
               ElevatedButton(
                 onPressed: () {},
@@ -257,7 +260,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(4.r), // Set the border radius
+                          BorderRadius.circular(AppDimension.radius(4, context)), // Set the border radius
                     ),
                   ),
                 ),
@@ -266,13 +269,13 @@ class _SecondStepPageState extends State<SecondStepPage> {
                   width: MediaQuery.of(context).size.width * 0.15,
                   alignment: Alignment.center,
                   padding:
-                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                      EdgeInsets.symmetric(horizontal: AppDimension.width(10, context), vertical: AppDimension.height(10, context)),
                   child: Text(
                     '在留カード',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12.sp,
+                      fontSize: AppDimension.height(12, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -282,18 +285,18 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height: 5.h,
+          height: AppDimension.height(5, context),
         ),
         Text(
           "申請の途中申請の途中でブラウザを閉じた場",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
         SizedBox(
-          height: 15.h,
+          height: AppDimension.height(15, context),
         ),
         Container(
-          height: 40.h,
+          height: AppDimension.height(40, context),
           alignment: Alignment.center,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -310,7 +313,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                 child: Text(
                   "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: AppDimension.height(15, context),
                   ),
                 ),
               ),
@@ -318,19 +321,19 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             RoundBulletText(
                 text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             RoundBulletText(
                 text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
@@ -382,30 +385,35 @@ class _CustomeCardState extends State<CustomCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(left: 20.w, top: 20.h),
+          margin: EdgeInsets.only(
+            
+             top: AppDimension.height(20, context),
+             bottom: AppDimension.height(10, context),
+             )
+             ,
           child: Text(
             widget.title,
             style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 20.h),
+                fontSize: AppDimension.height(20, context)),
           ),
         ),
         widget.subtitle != null
             ? Container(
-                margin: EdgeInsets.only(left: 25.h),
+                margin: EdgeInsets.only(left: AppDimension.height(25, context)),
                 child: Text(
                   widget.subtitle,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 12.sp,
+                    fontSize: AppDimension.height(12, context),
                     height: 1.5,
                   ),
                 ),
               )
             : const SizedBox.shrink(),
         Container(
-          height: 50.h,
+          height: AppDimension.height(50, context),
           child: ListView.builder(
             itemCount: widget.options.length,
             scrollDirection: Axis.horizontal,
@@ -413,7 +421,7 @@ class _CustomeCardState extends State<CustomCard> {
               return Row(
                 children: <Widget>[
                   Transform.scale(
-                    scale: 1.0.r,
+                    scale: AppDimension.radius(1, context),
                     child: Radio(
                       value: index,
                       groupValue: selectedOption,
@@ -426,10 +434,10 @@ class _CustomeCardState extends State<CustomCard> {
                   ),
                   Text(
                     widget.options[index],
-                    style: TextStyle(fontSize: 18.h),
+                    style: TextStyle(fontSize: AppDimension.height(18, context)),
                   ),
                   SizedBox(
-                    width: 10.w,
+                    width: AppDimension.width(10, context),
                   )
                 ],
               );

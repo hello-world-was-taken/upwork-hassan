@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/camera_overlay.dart';
 import 'package:upwork_hassan/features/pages/presentation/camera_page.dart';
 
@@ -13,18 +14,18 @@ class UsageDemo extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0XFF1E1E1E),
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(30, context), vertical: AppDimension.height(20, context)),
           child: ListView(
             children: [
               Text(
                 "撮影｜運転免許証｜表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: AppDimension.height(18, context)),
               ),
               Container(
-                height: 5.h,
+                height: AppDimension.height(5, context),
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+                margin: EdgeInsets.symmetric(horizontal: AppDimension.width(20, context), vertical: AppDimension.height(30, context)),
                 decoration: BoxDecoration(
                   color: Color(0XFFB3B3B3),
                   borderRadius: BorderRadius.circular(10.0),
@@ -33,29 +34,29 @@ class UsageDemo extends StatelessWidget {
               Text(
                 "表面",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: AppDimension.height(18, context)),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: AppDimension.height(30, context)),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10.h),
+                margin: EdgeInsets.symmetric(vertical: AppDimension.height(10, context)),
                 width: double.infinity,
                 child: Image.asset(
                   "assets/images/scan_demo.png",
-                  width: 300.w,
+                  width: AppDimension.height(300, context),
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: AppDimension.height(30, context)),
               Text(
                 "免許証の外形が確認しやすいように背景は白以外で撮影してください",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 18.sp),
+                style: TextStyle(color: Colors.white, fontSize: AppDimension.height(18, context)),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: AppDimension.height(30, context)),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-                width: 250.w,
-                height: 70.h,
+                margin: EdgeInsets.symmetric(vertical: AppDimension.height(5, context), horizontal: AppDimension.width(10, context)),
+                width: AppDimension.width(250, context),
+                height: AppDimension.height(70, context),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -70,7 +71,7 @@ class UsageDemo extends StatelessWidget {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
-                            25.h), // Set the border radius
+                            AppDimension.height(25, context)), // Set the border radius
                       ),
                     ),
                   ),
@@ -79,7 +80,7 @@ class UsageDemo extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 24.sp,
+                      fontSize: AppDimension.height(24, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),

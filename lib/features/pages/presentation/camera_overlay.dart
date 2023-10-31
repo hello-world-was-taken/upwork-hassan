@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/popup_widget.dart';
 
 class CameraOverlay extends StatefulWidget {
@@ -28,99 +29,105 @@ class _CameraOverlayState extends State<CameraOverlay> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 40.h,
-            horizontal: 30.w
-            ),
-            child: Column(
-              children: [
-                
+          child: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: AppDimension.height(40, context),
+              horizontal: AppDimension.width(30, context)
+              ),
+              child: Column(
+                children: [
                   
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("撮影|",
+                        
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: AppDimension.height(30, context)
+                        ),),
+                        Text(
+                          "運転免許証|",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: AppDimension.height(30, context)
+                        ),
+                        ),
+                        Text("表面",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: AppDimension.height(30, context)
+                        ),
+                        )
+                      ],
+                    ),
+                  
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: AppDimension.height(20, context)),
+                    decoration: BoxDecoration(
+          color: Color(0XFF979797),
+          borderRadius: BorderRadius.circular(10)
+                    ),
+                    height: 5,
+                    width: double.infinity,
+                  ),
+                
+                  Container(
+                    child: Text("表面",
+                    style: TextStyle(
+                          color: Colors.white,
+                          fontSize: AppDimension.height(30, context)
+                        )
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppDimension.height(120, context),
+                  ),
+                  Stack(
+                    alignment: Alignment.center, 
                     children: [
-                      Text("撮影|",
+                      Container(
+                        width: AppDimension.width(300, context),
+                        child: Image.asset("assets/images/cameraCenter.png",
+                        fit: BoxFit.cover,
+                        ),
+                      ),
+                      if (_showPopup)
+                        Positioned(
+                          // top: AppDimension.height(60, context),
+                          // left: AppDimension.width(10, context),
+                          child: PopupCard()
+                          )
                       
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.h
-                      ),),
-                      Text(
-                        "運転免許証|",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.h
-                      ),
-                      ),
-                      Text("表面",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.h
-                      ),
-                      )
+          
                     ],
                   ),
-                
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 20.h),
-                  decoration: BoxDecoration(
-color: Color(0XFF979797),
-borderRadius: BorderRadius.circular(10)
+                   SizedBox(
+                    height: AppDimension.height(120, context),
                   ),
-                  height: 5,
-                  width: double.infinity,
-                ),
-              
-                Container(
-                  child: Text("表面",
-                  style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.h
-                      )
-                  ),
-                ),
-                SizedBox(
-                  height: 120.h,
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      width: 300.w,
-                      child: Image.asset("assets/images/cameraCenter.png",
-                      fit: BoxFit.cover,
-                      ),
-                    ),
-                    if (_showPopup)
-                      Positioned(
-                        top: 60.h,
-                        left: 10.w,
-                        child: PopupCard()
-                        )
-                    
-
-                  ],
-                ),
-                 SizedBox(
-                  height: 120.h,
-                ),
-                ElevatedButton(
-  onPressed: () {
-    
-  },
-  style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.white,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(25),
-    ),
-    minimumSize: Size(120.w, 80.h),
-  ),
-  child: Icon(
-    Icons.camera_alt,
-    color: Colors.black,
-    size: 60.h,
-  ),
-)
-              ],
+                  Container(
+                    width: AppDimension.width(40, context),
+                    child: ElevatedButton(
+                              onPressed: () {
+                                
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(AppDimension.radius(25, context)),
+                                ),
+                                minimumSize: Size(AppDimension.width(120, context), AppDimension.height(20, context)),
+                              ),
+                              child: Icon(
+                                Icons.camera_alt,
+                                color: Colors.black,
+                                size: AppDimension.height(60, context),
+                              ),
+                            ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

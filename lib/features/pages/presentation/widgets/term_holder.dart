@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TermHolder extends StatelessWidget {
   final String text;
@@ -15,7 +16,7 @@ class TermHolder extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: text,
-          style: TextStyle(fontSize: 18.h, color: Colors.black, fontFamily: 'MsGothic'),
+          style: TextStyle(fontSize: AppDimension.height(18, context), color: Colors.black, fontFamily: 'MsGothic'),
           children: <TextSpan>[
             TextSpan(text: richText, style: richTextStyle),
           ],

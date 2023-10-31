@@ -1,20 +1,11 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/usage_demo.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
-class AppDimension {
-  static double myDeviceWidth = 390;
-  static double myDeviceHeight = 844;
-  static width(double requiredWidth, BuildContext context) {
-    return MediaQuery.of(context).size.width / (myDeviceWidth / requiredWidth);
-  }
 
-  static height(double requiredHeight, BuildContext context) {
-    return MediaQuery.of(context).size.height / (myDeviceHeight / requiredHeight);
-  }
-}
 
 class AccessRequest extends StatelessWidget {
   AccessRequest({super.key});
@@ -31,28 +22,31 @@ class AccessRequest extends StatelessWidget {
             SecondaryColorHeading(title: "ご注意"),
             Container(
               // margin: EdgeInsets.only(bottom: 25.h),
-              padding: EdgeInsets.symmetric(horizontal: 10.h),
+              padding: EdgeInsets.symmetric(horizontal: AppDimension.height(10, context)),
               width: double.infinity,
-              height: 120.h,
+              height: AppDimension.height(120, context),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(5.r),
+                borderRadius: BorderRadius.circular(AppDimension.radius(5, context)),
               ),
               child: Center(
                   child: Text(
                 "カメラへのアクセスを求めるメッセージ表示がされた場合、撮影のために許可してお進みください。",
-                style: TextStyle(color: Colors.black, fontSize: 18.h),
+                style: TextStyle(
+                  
+                  color: Colors.black, 
+                fontSize: AppDimension.height(18, context)),
               )),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 25.h),
-              padding: EdgeInsets.all(10.h),
+              margin: EdgeInsets.only(bottom: AppDimension.height(25, context)),
+              padding: EdgeInsets.all(AppDimension.height(10, context)),
               width: double.infinity,
-              height: 60.h,
+              height: AppDimension.height(60, context),
               decoration:
-                  BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
+                  BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
               child: Container(
-                padding: EdgeInsets.only(left:290.w),
+                padding: EdgeInsets.only(left:AppDimension.width(290, context)),
                 child: ElevatedButton(
                   onPressed: () {
                      Navigator.push(
@@ -67,13 +61,13 @@ class AccessRequest extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.r), // Set the border radius
+                        borderRadius: BorderRadius.circular(AppDimension.radius(10, context)), // Set the border radius
                       ),
                     ),
                   ),
                   child: Text(
                     '次へ',
-                    style: TextStyle(color: Colors.black, fontSize: 10.sp),
+                    style: TextStyle(color: Colors.black, fontSize: AppDimension.height(30, context)),
                   ),
                 ),
               ),
