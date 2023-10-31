@@ -175,47 +175,113 @@ class _SecondStepPageState extends State<SecondStepPage> {
           SizedBox(
             height: 10.h,
           ),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter ...',
-                  ),
+          Container(
+            height: 60.h,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.05,
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(2.r), // Set the border radius
+                Container(
+                  height: double.infinity,
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter ...',
                     ),
                   ),
                 ),
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  margin: EdgeInsets.only(left: 5.w),
+                SizedBox(
+                  width: 10.w,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(4.r), // Set the border radius
+                      ),
+                    ),
+                  ),
+                  child: Container(
+                    height: double.infinity,
+                    width: MediaQuery.of(context).size.width * 0.20,
+                    alignment: Alignment.center,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                    child: Text(
+                      'button',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5.h,
+          ),
+          Text(
+            "under input......",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12.sp),
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          Container(
+            height: 40.h,
+            alignment: Alignment.center,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.05,
+                ),
+                Checkbox(
+                  activeColor: Color(0XFF757575),
+                  value: true,
+                  onChanged: (value) {},
+                ),
+                Center(
                   child: Text(
-                    'button',
-                    textAlign: TextAlign.center,
+                    "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 16.sp,
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Column(
+            children: [
+              RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
+              SizedBox(
+                height: 10.h,
               ),
+              RoundBulletText(
+                  text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+              SizedBox(
+                height: 10.h,
+              ),
+              RoundBulletText(
+                  text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
             ],
           ),
-          RoundBulletText(text: "...."),
-          RoundBulletText(text: "...."),
-          RoundBulletText(text: "...."),
         ],
       ),
     );
