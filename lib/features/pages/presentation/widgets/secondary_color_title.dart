@@ -19,6 +19,7 @@ class SecondaryColorHeading extends StatelessWidget {
           color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
       child: Text(
         title,
+        textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white, fontSize: 25.h),
       ),
     );
