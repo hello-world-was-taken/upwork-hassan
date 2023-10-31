@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
+import 'package:upwork_hassan/features/pages/presentation/onboarding.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
@@ -59,8 +60,10 @@ class _AgreementState extends State<Agreement> {
                               ),
                               Expanded(
                                 child: Container(
-                                  margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 5.w),
-                                  child: Text(_radios[index], style: TextStyle(fontSize: 20.h)),
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 10.h, horizontal: 5.w),
+                                  child: Text(_radios[index],
+                                      style: TextStyle(fontSize: 20.h)),
                                 ),
                               ),
                             ],
@@ -89,15 +92,21 @@ class _AgreementState extends State<Agreement> {
                         width: double.infinity,
                         child: Column(
                           children: [
-                            RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(
+                                text:
+                                    "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: 10.h,
                             ),
-                            RoundBulletText(text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(
+                                text:
+                                    "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: 10.h,
                             ),
-                            RoundBulletText(text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+                            RoundBulletText(
+                                text:
+                                    "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
                           ],
                         ),
                       ),
@@ -117,7 +126,7 @@ class _AgreementState extends State<Agreement> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => AccessRequest()),
+                          MaterialPageRoute(builder: (context) => OnBoarding()),
                         );
                       },
                       text: '次へ進む',

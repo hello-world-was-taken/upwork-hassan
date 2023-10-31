@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
@@ -31,35 +32,53 @@ class _OnBoardingState extends State<OnBoarding> {
     var _pages = [
       FirstStepPage(),
       SecondStepPage(),
-      ThirdStepPage(next: incrementStage),
-      FourthStepPage(next: incrementStage)
+      ThirdStepPage(),
+      FourthStepPage()
     ];
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.grey.shade100,
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 10.h),
+          height: MediaQuery.of(context).size.height,
           child: Column(
-            
             children: [
               SizedBox(
                 height: 10.h,
               ),
               ProgressIndicator(stage: stage),
-              _pages[stage],
+              SizedBox(
+                height: 20.h,
+              ),
+              Container(
+                color: Colors.white,
+                padding: EdgeInsets.all(10.h),
+                height: MediaQuery.of(context).size.height * 0.65,
+                child: _pages[stage],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
               stage > 0
                   ? ActionButton(
                       onPressed: () {
                         decrementStage();
                       },
-                      text: 'prev',
+                      text: 'Prev',
                     )
                   : SizedBox.shrink(),
               ActionButton(
                 onPressed: () {
-                  incrementStage();
+                  if (stage < 3)
+                    incrementStage();
+                  else
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AccessRequest()),
+                    );
                 },
-                text: 'next',
+                text: 'Next',
               ),
             ],
           ),
@@ -93,10 +112,9 @@ class ProgressIndicator extends StatelessWidget {
                     color: stage < index ? Color(0XFF757575) : Colors.black,
                     size: 16.r,
                   ),
-                  Text("stage $index",
-                  style: TextStyle(
-                   fontSize: 20.h 
-                  ),
+                  Text(
+                    "stage $index",
+                    style: TextStyle(fontSize: 20.h),
                   )
                 ],
               ),
@@ -122,27 +140,44 @@ class FirstStepPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Column(
-            
-            children: [
-              CustomCard(title: "...", options: ["option 0", "option 1"]),
-              CustomCard(
-                title: "...",
-                
-                options: ["option 0", "option 1"],
-              ),
-              CustomCard(title: "...", options: ["option 0", "option 1"]),
-              CustomCard(title: "...", options: ["option 0", "option 1"]),
-              CustomCard(title: "...", options: ["option 0", "option 1"]),
-              CustomCard(title: "...", options: ["option 0", "option 1"]),
-            ],
-          ),
-        ],
-      ),
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        Column(
+          children: [
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(
+                title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
+                options: ["申請の途", "申請の途"]),
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(
+              title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
+              subtitle: "iphone: 申請の途中でブラウザを閉じた場合は、ります。 \n申請の途中でブラウザを閉じた場合。",
+              options: ["途中で", "途中で"],
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(title: "申請の途中でブラウザを閉じた場合", options: ["申請の途中", "申請の途中"]),
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(title: "申請の途中でブラウザを閉じた場合は", options: ["申請の途中", "申請の途中"]),
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(title: "申請の途中でブラウ", options: ["申請", "申請の"]),
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomCard(title: "申請の途中", options: ["申請の途中", "申請"]),
+          ],
+        ),
+      ],
     );
   }
 }
@@ -157,146 +192,157 @@ class SecondStepPage extends StatefulWidget {
 class _SecondStepPageState extends State<SecondStepPage> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Text(
-            "Header...",
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        SizedBox(
+          height: 10.h,
+        ),
+        Text(
+          "申請の途中でブラウザを閉じた場",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        Text(
+          "申請の途中でブラウザを閉じた場合は、最初からやり直。",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 12.sp),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          // margin: EdgeInsets.only(bottom: 25.h),
+          padding: EdgeInsets.only(top: 15.h),
+          width: double.infinity,
+          height: 60.h,
+          decoration: BoxDecoration(
+              color: Color(0XFF757575),
+              borderRadius: BorderRadius.circular(5.r)),
+          child: Text(
+            "54,000",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontSize: 25.h),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Text(
-            "sub Header...",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12.sp),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          SecondaryColorHeading(title: "54,000"),
-          SizedBox(
-            height: 10.h,
-          ),
-          Container(
-            height: 60.h,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.05,
-                ),
-                Container(
-                  height: double.infinity,
-                  width: MediaQuery.of(context).size.width * 0.45,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Enter ...',
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(4.r), // Set the border radius
-                      ),
-                    ),
-                  ),
-                  child: Container(
-                    height: double.infinity,
-                    width: MediaQuery.of(context).size.width * 0.20,
-                    alignment: Alignment.center,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-                    child: Text(
-                      'button',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Text(
-            "under input......",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12.sp),
-          ),
-          SizedBox(
-            height: 15.h,
-          ),
-          Container(
-            height: 40.h,
-            alignment: Alignment.center,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.05,
-                ),
-                Checkbox(
-                  activeColor: Color(0XFF757575),
-                  value: true,
-                  onChanged: (value) {},
-                ),
-                Center(
-                  child: Text(
-                    "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          Column(
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          height: 60.h,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
             children: [
-              RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
-              SizedBox(
-                height: 10.h,
+              Container(
+                height: double.infinity,
+                width: MediaQuery.of(context).size.width * 0.45,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: '申請の途中でブラ',
+                  ),
+                ),
               ),
-              RoundBulletText(
-                  text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
               SizedBox(
-                height: 10.h,
+                width: 10.w,
               ),
-              RoundBulletText(
-                  text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(4.r), // Set the border radius
+                    ),
+                  ),
+                ),
+                child: Container(
+                  height: double.infinity,
+                  width: MediaQuery.of(context).size.width * 0.15,
+                  alignment: Alignment.center,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                  child: Text(
+                    '在留カード',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Text(
+          "申請の途中申請の途中でブラウザを閉じた場",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 12.sp),
+        ),
+        SizedBox(
+          height: 15.h,
+        ),
+        Container(
+          height: 40.h,
+          alignment: Alignment.center,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.05,
+              ),
+              Checkbox(
+                activeColor: Color(0XFF757575),
+                value: true,
+                onChanged: (value) {},
+              ),
+              Center(
+                child: Text(
+                  "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
+            SizedBox(
+              height: 10.h,
+            ),
+            RoundBulletText(
+                text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+            SizedBox(
+              height: 10.h,
+            ),
+            RoundBulletText(
+                text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+          ],
+        ),
+      ],
     );
   }
 }
 
 class ThirdStepPage extends StatelessWidget {
-  final next;
-  const ThirdStepPage({super.key, required this.next});
+  const ThirdStepPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -305,8 +351,7 @@ class ThirdStepPage extends StatelessWidget {
 }
 
 class FourthStepPage extends StatelessWidget {
-  final next;
-  const FourthStepPage({super.key, required this.next});
+  const FourthStepPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -337,15 +382,13 @@ class _CustomeCardState extends State<CustomCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          
-          margin: EdgeInsets.only(left: 20.w,top: 20.h),
+          margin: EdgeInsets.only(left: 20.w, top: 20.h),
           child: Text(
             widget.title,
             style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 20.h
-            ),
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.h),
           ),
         ),
         widget.subtitle != null
@@ -355,7 +398,8 @@ class _CustomeCardState extends State<CustomCard> {
                   widget.subtitle,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20.h
+                    fontSize: 12.sp,
+                    height: 1.5,
                   ),
                 ),
               )
@@ -384,6 +428,9 @@ class _CustomeCardState extends State<CustomCard> {
                     widget.options[index],
                     style: TextStyle(fontSize: 18.h),
                   ),
+                  SizedBox(
+                    width: 10.w,
+                  )
                 ],
               );
             },
