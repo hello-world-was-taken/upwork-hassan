@@ -67,7 +67,7 @@ class _CameraOverlayState extends State<CameraOverlay> {
 color: Color(0XFF979797),
 borderRadius: BorderRadius.circular(10)
                   ),
-                  height: 10,
+                  height: 5,
                   width: double.infinity,
                 ),
               

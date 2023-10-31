@@ -16,7 +16,7 @@ class PopupCard extends StatelessWidget {
       ),
       child: Center(
         child: Container(
-          height: 50.h,
+          height: 70.h,
           width: 150.w,
           alignment: Alignment.center,
           child: Text(

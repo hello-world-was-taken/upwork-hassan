@@ -1,11 +1,11 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/features/pages/presentation/camera_overlay.dart';
 import 'package:upwork_hassan/features/pages/presentation/camera_page.dart';
 
 class UsageDemo extends StatelessWidget {
-  final CameraController cameraController;
-  const UsageDemo({super.key, required this.cameraController});
+  const UsageDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,9 +61,7 @@ class UsageDemo extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CameraPage(
-                                cameraController: cameraController,
-                              )),
+                          builder: (context) => CameraOverlay()),
                     );
                   },
                   style: ButtonStyle(

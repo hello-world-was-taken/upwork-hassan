@@ -24,12 +24,13 @@ class AccessRequest extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SecondaryColorHeading(title: "ご注意"),
             Container(
-              margin: EdgeInsets.only(bottom: 25.h),
+              // margin: EdgeInsets.only(bottom: 25.h),
               padding: EdgeInsets.symmetric(horizontal: 10.h),
               width: double.infinity,
               height: 120.h,
@@ -51,22 +52,16 @@ class AccessRequest extends StatelessWidget {
               decoration:
                   BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
               child: Container(
-                padding: EdgeInsets.only(left: MediaQuery.of(context).size.width - 100.h),
+                padding: EdgeInsets.only(left:290.w),
                 child: ElevatedButton(
                   onPressed: () {
-                    availableCameras().then((cameras) async {
-                      final firstCamera = cameras.first;
-                      _controller = CameraController(firstCamera, ResolutionPreset.high);
-                      await _controller.initialize();
-
-                      Navigator.push(
+                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => UsageDemo(
-                                  cameraController: _controller,
+                                 
                                 )),
                       );
-                    });
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.white),

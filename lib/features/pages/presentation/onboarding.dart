@@ -38,8 +38,9 @@ class _OnBoardingState extends State<OnBoarding> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 10.h),
           child: Column(
+            
             children: [
               SizedBox(
                 height: 10.h,
@@ -92,7 +93,11 @@ class ProgressIndicator extends StatelessWidget {
                     color: stage < index ? Color(0XFF757575) : Colors.black,
                     size: 16.r,
                   ),
-                  Text("stage $index")
+                  Text("stage $index",
+                  style: TextStyle(
+                   fontSize: 20.h 
+                  ),
+                  )
                 ],
               ),
               index < 3
@@ -122,11 +127,12 @@ class FirstStepPage extends StatelessWidget {
         shrinkWrap: true,
         children: [
           Column(
+            
             children: [
               CustomCard(title: "...", options: ["option 0", "option 1"]),
               CustomCard(
                 title: "...",
-                subtitle: "check \ncheck",
+                
                 options: ["option 0", "option 1"],
               ),
               CustomCard(title: "...", options: ["option 0", "option 1"]),
@@ -331,12 +337,14 @@ class _CustomeCardState extends State<CustomCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(left: 20.h),
+          
+          margin: EdgeInsets.only(left: 20.w,top: 20.h),
           child: Text(
             widget.title,
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
+              fontSize: 20.h
             ),
           ),
         ),
@@ -347,6 +355,7 @@ class _CustomeCardState extends State<CustomCard> {
                   widget.subtitle,
                   style: TextStyle(
                     color: Colors.black,
+                    fontSize: 20.h
                   ),
                 ),
               )

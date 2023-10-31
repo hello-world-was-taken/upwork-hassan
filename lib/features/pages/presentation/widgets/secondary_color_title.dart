@@ -11,16 +11,16 @@ class SecondaryColorHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 25.h),
+      // margin: EdgeInsets.only(bottom: 25.h),
+      padding: EdgeInsets.only(top: 15.h),
       width: double.infinity,
       height: 60.h,
       decoration: BoxDecoration(
           color: Color(0XFF757575), borderRadius: BorderRadius.circular(5.r)),
-      child: Center(
-          child: Text(
+      child: Text(
         title,
         style: TextStyle(color: Colors.white, fontSize: 25.h),
-      )),
+      ),
     );
   }
 }

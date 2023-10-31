@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'MsGothic'),
-        home: OnBoarding(),
+        home: TermsAndConditions(),
       ),
     );
   }
