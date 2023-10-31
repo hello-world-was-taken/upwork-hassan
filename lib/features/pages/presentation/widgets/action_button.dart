@@ -14,6 +14,7 @@ class ActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 10.h),
+      padding: EdgeInsets.symmetric(vertical: 5.h),
       width: 350.w,
       height: 70.h,
       child: ElevatedButton(
@@ -30,7 +31,7 @@ class ActionButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: 18.sp),
+          style: TextStyle(color: Colors.white, fontSize: 28.h),
         ),
       ),
     );

@@ -73,7 +73,7 @@ class AccessRequest extends StatelessWidget {
                   ),
                   child: Text(
                     '次へ',
-                    style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                    style: TextStyle(color: Colors.black, fontSize: 10.sp),
                   ),
                 ),
               ),
