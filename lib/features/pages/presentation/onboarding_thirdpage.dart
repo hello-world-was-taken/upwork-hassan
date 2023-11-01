@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 
 const List<String> dropdowns = <String>['One', 'Two', 'Three', 'Four'];
@@ -31,52 +32,52 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
     return ListView(
       children: [
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: AppDimension.height(16, context), fontWeight: FontWeight.bold),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場合は、最初からやり直。",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
         Container(
-          padding: EdgeInsets.only(left: 100.w),
+          padding: EdgeInsets.only(left: AppDimension.width(100, context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 10.h,
+                height: AppDimension.height(10, context),
               ),
               RoundBulletText(
                 text: "申ます。",
-                size: 12.h,
+                size: AppDimension.height(12, context),
               ),
               SizedBox(
-                height: 5.h,
+                height: AppDimension.height(5, context),
               ),
               RoundBulletText(
                 text: "規定時ます。",
-                size: 12.h,
+                size: AppDimension.height(12, context),
               ),
               SizedBox(
-                height: 5.h,
+                height:AppDimension.height(5, context),
               ),
               RoundBulletText(
                 text: "カメ。",
-                size: 12.h,
+                size: AppDimension.height(12, context),
               )
             ],
           ),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         TextFormField(
           controller: controllers[0],
@@ -99,7 +100,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         TextFormField(
           controller: controllers[1],
           keyboardType: TextInputType.text,
@@ -121,7 +122,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         TextFormField(
           controller: controllers[2],
           keyboardType: TextInputType.text,
@@ -143,7 +144,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         TextFormField(
           controller: controllers[3],
           keyboardType: TextInputType.text,
@@ -165,7 +166,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         TextFormField(
           controller: controllers[4],
           keyboardType: TextInputType.text,
@@ -187,7 +188,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         TextFormField(
           controller: controllers[5],
           keyboardType: TextInputType.text,
@@ -209,9 +210,9 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             focusColor: Color(0XFF757575),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         SizedBox(
-          height: 100.h,
+          height: AppDimension.height(100, context),
           child: TextFormField(
             controller: controllers[6],
             keyboardType: TextInputType.text,
@@ -237,17 +238,17 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             ),
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         Text(
           "Birthdate",
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: AppDimension.height(10, context)),
         Row(
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.35,
-              height: 50.h,
+              height: AppDimension.height(50, context),
               child: TextFormField(
                 controller: controllers[7],
                 keyboardType: TextInputType.text,
@@ -277,7 +278,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             ),
             SizedBox(width: MediaQuery.of(context).size.width * 0.03),
             SizedBox(
-              height: 50.h,
+              height: AppDimension.height(50, context),
               width: MediaQuery.of(context).size.width * 0.17,
               child: TextFormField(
                 controller: controllers[8],
@@ -308,7 +309,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             ),
             SizedBox(width: MediaQuery.of(context).size.width * 0.03),
             SizedBox(
-              height: 50.h,
+              height: AppDimension.height(50, context),
               width: MediaQuery.of(context).size.width * 0.17,
               child: TextFormField(
                 controller: controllers[9],
@@ -339,7 +340,7 @@ class _ThirdStepPageState extends State<ThirdStepPage> {
             ),
           ],
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: AppDimension.height(20, context)),
         DropdownButton<String>(
           isExpanded: true,
           value: dropdownValue,

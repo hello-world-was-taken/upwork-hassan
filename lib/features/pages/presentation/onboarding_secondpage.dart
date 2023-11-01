@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upwork_hassan/core/utils/app_dimension.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
@@ -17,30 +18,30 @@ class _SecondStepPageState extends State<SecondStepPage> {
       shrinkWrap: true,
       children: [
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: AppDimension.height(15, context), fontWeight: FontWeight.bold),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         Text(
           "申請の途中でブラウザを閉じた場合は、最初からやり直。",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         SecondaryColorHeading(title: "54,000"),
         SizedBox(
-          height: 10.h,
+          height: AppDimension.height(10, context),
         ),
         Container(
-          height: 60.h,
+          height: AppDimension.height(60, context),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
@@ -55,7 +56,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                 ),
               ),
               SizedBox(
-                width: 10.w,
+                width: AppDimension.width(10, context),
               ),
               ElevatedButton(
                 onPressed: () {},
@@ -65,7 +66,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(4.r), // Set the border radius
+                          BorderRadius.circular(AppDimension.radius(5, context)), // Set the border radius
                     ),
                   ),
                 ),
@@ -74,13 +75,13 @@ class _SecondStepPageState extends State<SecondStepPage> {
                   width: MediaQuery.of(context).size.width * 0.15,
                   alignment: Alignment.center,
                   padding:
-                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                      EdgeInsets.symmetric(horizontal: AppDimension.width(10, context), vertical: AppDimension.height(10, context)),
                   child: Text(
                     '在留カード',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12.sp,
+                      fontSize: AppDimension.height(12, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -90,18 +91,18 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height: 5.h,
+          height: AppDimension.height(5, context),
         ),
         Text(
           "申請の途中申請の途中でブラウザを閉じた場",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: AppDimension.height(12, context)),
         ),
         SizedBox(
-          height: 15.h,
+          height: AppDimension.height(15, context),
         ),
         Container(
-          height: 40.h,
+          height: AppDimension.height(40, context),
           alignment: Alignment.center,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -118,7 +119,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
                 child: Text(
                   "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: AppDimension.height(16, context),
                   ),
                 ),
               ),
@@ -126,19 +127,19 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height: 20.h,
+          height: AppDimension.height(20, context),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             RoundBulletText(
                 text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
             SizedBox(
-              height: 10.h,
+              height: AppDimension.height(10, context),
             ),
             RoundBulletText(
                 text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
