@@ -51,6 +51,7 @@ class RoundBulletText extends StatelessWidget {
       margin: EdgeInsets.only(bottom: AppDimension.height(5, context)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
+       
         children: [
           Container(
             margin: EdgeInsets.only(

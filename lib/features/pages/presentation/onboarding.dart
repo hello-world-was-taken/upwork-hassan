@@ -116,67 +116,74 @@ class ProgressIndicator extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: AppDimension.height(10, context)),
-                    child: AnimatedSwitcher(
-                    duration: Duration(seconds: 1),
-                    transitionBuilder: (Widget child, Animation<double> animation) {
-                      return ScaleTransition(scale: animation, child: child);
-                    },
-                    child: stage <= index
-                        ? Icon(
-                            Icons.circle,
-                            key: ValueKey<int>(index),
-                            color: getProgressColor(index),
-                            size: AppDimension.radius(16, context),
-                          )
-                        : AnimatedSwitcher(
-                            duration: Duration(seconds: 2),
-                            transitionBuilder: (Widget child, Animation<double> animation) {
-                              return ScaleTransition(scale: animation, child: child);
-                            },
-                            child: Icon(
-                              Icons.check,
-                              key: ValueKey<int>(index),
-                              color: Colors.black,
-                              size: AppDimension.radius(30, context),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: AppDimension.height(0, context),
+                        child: AnimatedSwitcher(
+                          duration: Duration(seconds: 1),
+                          transitionBuilder: (Widget child, Animation<double> animation) {
+                            return ScaleTransition(scale: animation, child: child);
+                          },
+                          child: stage <= index
+                              ? Container(
+                                margin: EdgeInsets.only(top: AppDimension.height(7, context)),
+                                child: Icon(
+                                    Icons.circle,
+                                    key: ValueKey<int>(index),
+                                    color: getProgressColor(index),
+                                    size: AppDimension.radius(16, context),
+                                  ),
+                              )
+                              : AnimatedSwitcher(
+                                  duration: Duration(seconds: 2),
+                                  transitionBuilder: (Widget child, Animation<double> animation) {
+                                    return ScaleTransition(scale: animation, child: child);
+                                  },
+                                  child: Icon(
+                                    Icons.check,
+                                    key: ValueKey<int>(index),
+                                    color: Colors.black,
+                                    size: AppDimension.radius(30, context),
+                                  ),
+                                ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: AppDimension.height(40, context)),
+                        child: Text(
+                          "同意し $index",
+                          style: TextStyle(fontSize: AppDimension.fontSize(20, context)),
+                        ),
+                      )
+                    ],
+                  ),
+                  index < 3
+                      ? Column(
+                          children: [
+                            SizedBox(
+                              height: AppDimension.height(5, context),
                             ),
-                          ),
-                  ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: AppDimension.height(40, context)),
-                    child: Text(
-                      "同意し $index",
-                      style: TextStyle(fontSize: AppDimension.fontSize(20, context)),
-                    ),
-                  )
+                            AnimatedContainer(
+                              duration: Duration(seconds: 3),
+                              height: AppDimension.height(5, context),
+                              width: AppDimension.width(30, context),
+                              margin: EdgeInsets.only(top: AppDimension.height(5, context)),
+                              color: getProgressColor(index),
+                            )
+                          ],
+                        )
+                      : SizedBox.shrink()
                 ],
               ),
-              index < 3
-                  ? Column(
-                    children: [
-                      SizedBox(
-                        height: AppDimension.height(5, context),
-                      ),
-                      AnimatedContainer(
-                    
-                      duration: Duration(seconds: 3),
-                      height: AppDimension.height(5, context),
-                      width: AppDimension.width(30, context),
-                      margin: EdgeInsets.only(top: AppDimension.height(5, context)),
-                      color: getProgressColor(index),
-                    )
-                    ],
-                  )
-                  : SizedBox.shrink()
             ],
           );
         },
