@@ -124,7 +124,7 @@ class ProgressIndicator extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    height: AppDimension.height(0, context),
+                    margin: EdgeInsets.only(top: AppDimension.height(10, context)),
                     child: AnimatedSwitcher(
                     duration: Duration(seconds: 1),
                     transitionBuilder: (Widget child, Animation<double> animation) {

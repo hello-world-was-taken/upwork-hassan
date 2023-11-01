@@ -37,6 +37,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                         "株式会社サチ通商インターナショナルが本人認証 サービスを提供いたします。",
                         style: TextStyle(
                           fontSize: AppDimension.height(25, context),
+                          
                         ),
                       ),
                     ),
@@ -46,12 +47,14 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                       child: Text(
                         "プライバシーポリシーと利用規約を最後までお読 みになり、下のボタンから次へお進みください。",
                         style: TextStyle(
-                          fontSize: AppDimension.height(20, context),
+                          fontSize: AppDimension.height(25, context),
                         ),
                       ),
                     ),
                     SecondaryColorHeading(title: "プライバシーポリシー"),
-                    SizedBox(height: AppDimension.height(15, context),),
+                    SizedBox(height: AppDimension.height(15, context),
+                    
+                    ),
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -97,8 +100,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                                     "2023年10月16日改定",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: AppDimension.height(20, context),
-                                        fontWeight: FontWeight.w500),
+                                        fontSize: AppDimension.height(25, context),
+                                        ),
                                   ),
                                 ),
                                 BulletText(text: "基本方針"),

@@ -16,7 +16,7 @@ class TermHolder extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: text,
-          style: TextStyle(fontSize: AppDimension.height(18, context), color: Colors.black, fontFamily: 'MsGothic'),
+          style: TextStyle(fontSize: AppDimension.height(20, context), color: Colors.black, fontFamily: 'MsGothic'),
           children: <TextSpan>[
             TextSpan(text: richText, style: richTextStyle),
           ],

@@ -20,7 +20,12 @@ class SecondaryColorHeading extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: TextStyle(color: Colors.white, fontSize: AppDimension.height(25, context)),
+          style: TextStyle(color: Colors.white, fontSize: AppDimension.height(35, context),
+          fontWeight: FontWeight.w600,
+          fontFamily: 'MsGothic'
+          
+          ),
+          
         ),
       ),
     );

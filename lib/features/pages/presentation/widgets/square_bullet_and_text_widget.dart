@@ -23,7 +23,9 @@ class BulletText extends StatelessWidget {
             child: Container(
               child: Text(
                 text,
-                style: TextStyle(fontSize: AppDimension.height(18, context),
+                style: TextStyle(
+                  fontSize: AppDimension.height(20, context),
+                fontFamily: 'MsGothic'
                 ),
               
               ),
