@@ -34,18 +34,15 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    var _pages = [
-      FirstStepPage(),
-      SecondStepPage(),
-      ThirdStepPage(),
-      FourthStepPage()
-    ];
+    var _pages = [FirstStepPage(), SecondStepPage(), ThirdStepPage(), FourthStepPage()];
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(40, context), vertical: AppDimension.height(10, context)),
+          padding: EdgeInsets.symmetric(
+              horizontal: AppDimension.width(40, context),
+              vertical: AppDimension.height(10, context)),
           // height: MediaQuery.of(context).size.height,
           child: Container(
             child: Column(
@@ -60,7 +57,6 @@ class _OnBoardingState extends State<OnBoarding> {
                 Container(
                   color: Colors.white,
                   padding: EdgeInsets.all(AppDimension.height(10, context)),
-                  
                   child: _pages[stage],
                 ),
                 SizedBox(
@@ -135,14 +131,14 @@ class ProgressIndicator extends StatelessWidget {
                           },
                           child: stage <= index
                               ? Container(
-                                margin: EdgeInsets.only(top: AppDimension.height(7, context)),
-                                child: Icon(
+                                  margin: EdgeInsets.only(top: AppDimension.height(7, context)),
+                                  child: Icon(
                                     Icons.circle,
                                     key: ValueKey<int>(index),
                                     color: getProgressColor(index),
                                     size: AppDimension.radius(16, context),
                                   ),
-                              )
+                                )
                               : AnimatedSwitcher(
                                   duration: Duration(milliseconds: 500),
                                   transitionBuilder: (Widget child, Animation<double> animation) {
@@ -192,7 +188,6 @@ class ProgressIndicator extends StatelessWidget {
   }
 }
 
-
 class FirstStepPage extends StatelessWidget {
   const FirstStepPage({super.key});
 
@@ -206,9 +201,7 @@ class FirstStepPage extends StatelessWidget {
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            CustomCard(
-                title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
-                options: ["申請の途", "申請の途"]),
+            CustomCard(title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。", options: ["申請の途", "申請の途"]),
             SizedBox(
               height: AppDimension.height(10, context),
             ),
@@ -287,7 +280,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height:AppDimension.height(10, context),
+          height: AppDimension.height(10, context),
         ),
         Container(
           height: AppDimension.height(60, context),
@@ -310,12 +303,11 @@ class _SecondStepPageState extends State<SecondStepPage> {
               ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(AppDimension.radius(4, context)), // Set the border radius
+                      borderRadius: BorderRadius.circular(
+                          AppDimension.radius(4, context)), // Set the border radius
                     ),
                   ),
                 ),
@@ -323,8 +315,9 @@ class _SecondStepPageState extends State<SecondStepPage> {
                   height: double.infinity,
                   width: MediaQuery.of(context).size.width * 0.15,
                   alignment: Alignment.center,
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppDimension.width(10, context), vertical: AppDimension.height(10, context)),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppDimension.width(10, context),
+                      vertical: AppDimension.height(10, context)),
                   child: Text(
                     '在留カード',
                     textAlign: TextAlign.center,
@@ -385,13 +378,11 @@ class _SecondStepPageState extends State<SecondStepPage> {
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            RoundBulletText(
-                text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+            RoundBulletText(text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            RoundBulletText(
-                text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+            RoundBulletText(text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
           ],
         ),
       ],
@@ -441,11 +432,9 @@ class _CustomeCardState extends State<CustomCard> {
       children: [
         Container(
           margin: EdgeInsets.only(
-            
-             top: AppDimension.height(20, context),
-             bottom: AppDimension.height(10, context),
-             )
-             ,
+            top: AppDimension.height(20, context),
+            bottom: AppDimension.height(10, context),
+          ),
           child: Text(
             widget.title,
             style: TextStyle(
@@ -456,7 +445,6 @@ class _CustomeCardState extends State<CustomCard> {
         ),
         widget.subtitle != null
             ? Container(
-                margin: EdgeInsets.only(left: AppDimension.height(25, context)),
                 child: Text(
                   widget.subtitle,
                   style: TextStyle(
@@ -469,22 +457,28 @@ class _CustomeCardState extends State<CustomCard> {
             : const SizedBox.shrink(),
         Container(
           height: AppDimension.height(50, context),
+          padding: EdgeInsets.all(0),
+          // color: Colors.green,
           child: ListView.builder(
             itemCount: widget.options.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return Row(
                 children: <Widget>[
-                  Transform.scale(
-                    scale: AppDimension.radius(1, context),
-                    child: Radio(
-                      value: index,
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value as int;
-                        });
-                      },
+                  SizedBox(
+                    height: 18,
+                    width: 18,
+                    child: Container(
+                      margin: EdgeInsets.only(right: 8),
+                      child: Radio(
+                        value: index,
+                        groupValue: selectedOption,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedOption = value as int;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   Text(

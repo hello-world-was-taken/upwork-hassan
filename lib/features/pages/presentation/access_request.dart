@@ -5,8 +5,6 @@ import 'package:upwork_hassan/core/utils/app_dimension.dart';
 import 'package:upwork_hassan/features/pages/presentation/usage_demo.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
-
-
 class AccessRequest extends StatelessWidget {
   AccessRequest({super.key});
   late CameraController _controller;
@@ -32,47 +30,42 @@ class AccessRequest extends StatelessWidget {
               child: Center(
                   child: Text(
                 "カメラへのアクセスを求めるメッセージ表示がされた場合、撮影のために許可してお進みください。",
-                style: TextStyle(
-                  
-                  color: Colors.black, 
-                fontSize: AppDimension.height(18, context)),
+                style: TextStyle(color: Colors.black, fontSize: AppDimension.height(18, context)),
               )),
             ),
             Container(
               margin: EdgeInsets.only(bottom: AppDimension.height(25, context)),
               padding: EdgeInsets.all(AppDimension.height(10, context)),
               width: double.infinity,
-              decoration:
-                  BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
+              decoration: BoxDecoration(
+                  color: Color(0XFF757575),
+                  borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
               child: Container(
-      
-      margin: EdgeInsets.only(left: AppDimension.width(300, context)),
-      child: TextButton(
-        onPressed: (){
-Navigator.push(
+                margin: EdgeInsets.only(left: AppDimension.width(300, context)),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => UsageDemo(
-                               
-                              )),
+                      MaterialPageRoute(builder: (context) => UsageDemo()),
                     );
-        },
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        ),
-        child: Center(
-          child: Text(
-                  '次へ',
-                  style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(30, context)),
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '次へ',
+                      style: TextStyle(
+                          color: Colors.black, fontSize: AppDimension.fontSize(25, context)),
+                    ),
+                  ),
                 ),
-        ),
-      ),
-    ),
+              ),
             ),
           ],
         ),
@@ -80,8 +73,3 @@ Navigator.push(
     );
   }
 }
-
-
-
-
-
