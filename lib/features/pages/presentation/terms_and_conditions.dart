@@ -27,7 +27,9 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: AppDimension.width(30, context), vertical: AppDimension.height(10, context)),
+                padding: EdgeInsets.symmetric(
+                    horizontal: AppDimension.width(30, context),
+                    vertical: AppDimension.height(10, context)),
                 child: Column(
                   children: [
                     Container(
@@ -36,8 +38,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                       child: Text(
                         "株式会社サチ通商インターナショナルが本人認証 サービスを提供いたします。",
                         style: TextStyle(
-                          fontSize: AppDimension.height(25, context),
-                          
+                          fontSize: AppDimension.height(20, context),
                         ),
                       ),
                     ),
@@ -47,13 +48,13 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                       child: Text(
                         "プライバシーポリシーと利用規約を最後までお読 みになり、下のボタンから次へお進みください。",
                         style: TextStyle(
-                          fontSize: AppDimension.height(25, context),
+                          fontSize: AppDimension.height(20, context),
                         ),
                       ),
                     ),
                     SecondaryColorHeading(title: "プライバシーポリシー"),
-                    SizedBox(height: AppDimension.height(15, context),
-                    
+                    SizedBox(
+                      height: AppDimension.height(15, context),
                     ),
                     Container(
                       width: double.infinity,
@@ -68,7 +69,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.symmetric(vertical: AppDimension.height(10, context)),
+                            margin:
+                                EdgeInsets.symmetric(vertical: AppDimension.height(10, context)),
                             width: double.infinity,
                             child: Image.asset(
                               "assets/images/newww.png",
@@ -78,7 +80,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                           ),
                           Center(
                             child: Container(
-                              margin: EdgeInsets.symmetric(vertical: AppDimension.height(10, context)),
+                              margin:
+                                  EdgeInsets.symmetric(vertical: AppDimension.height(10, context)),
                               child: Text(
                                 "プライバシーポリシー",
                                 style: TextStyle(
@@ -89,19 +92,21 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.symmetric(horizontal: AppDimension.width(10, context)),
+                            margin:
+                                EdgeInsets.symmetric(horizontal: AppDimension.width(10, context)),
                             width: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.symmetric(vertical: AppDimension.width(10, context)),
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: AppDimension.width(10, context)),
                                   child: Text(
                                     "2023年10月16日改定",
                                     style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: AppDimension.height(25, context),
-                                        ),
+                                      color: Colors.black,
+                                      fontSize: AppDimension.height(20, context),
+                                    ),
                                   ),
                                 ),
                                 BulletText(text: "基本方針"),
@@ -130,9 +135,18 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                                 RoundBulletText(text: "法令や弊社のご利用規約の場合"),
                                 RoundBulletText(
                                     text:
-                                        """注意事項に反する行動から、弊社の権利、財産またはサービスを保護または防禦する必要があり、本人の同意を得ることができない場合 
-                        
-    また、個人情報の内容に誤りがあり、ご本人から訂正や追加・削除および利用停止の請求がある場合、調査の上、速やかにこれらの請求に対応いたします。その際、ご本人であることが確認できない場合には、これらの請求に応じません。"""),
+                                        """注意事項に反する行動から、弊社の権利、財産またはサービスを保護または防禦する必要があり、本人の同意を得ることができない場合"""),
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    bottom: 20,
+                                  ),
+                                  child: Text(
+                                    """また、個人情報の内容に誤りがあり、ご本人から訂正や追加・削除および利用停止の請求がある場合、調査の上、速やかにこれらの請求に対応いたします。その際、ご本人であることが確認できない場合には、これらの請求に応じません。""",
+                                    style: TextStyle(
+                                        fontSize: AppDimension.height(20, context),
+                                        fontFamily: 'MsGothic'),
+                                  ),
+                                ),
                                 BulletText(text: " 個人情報の第三者提供について"),
                                 TermHolder(
                                     text:
@@ -150,12 +164,27 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                                 BulletText(text: " 個人情報の取扱に関するお問い合わせ先"),
                                 TermHolder(
                                   text:
-                                      """個人情報の開示や訂正および利用停止、その他個人情報に関するお問い合わせにつきましては、下記の窓口で受け付けております。
-株式会社サチ通商インターナショナル 電子メール：""",
-                                  richText: "info@sachitsusho.com",
-                                  richTextStyle: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold),
+                                      """個人情報の開示や訂正および利用停止、その他個人情報に関するお問い合わせにつきましては、下記の窓口で受け付けております。 株式会社サチ通商インターナショナル """,
+                                ),
+                                Container(
+                                  child: RichText(
+                                    text: TextSpan(
+                                      text: "電子メール：",
+                                      style: TextStyle(
+                                          fontSize: AppDimension.height(20, context),
+                                          color: Colors.black,
+                                          fontFamily: 'MsGothic'),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: "info@sachitsusho.com",
+                                          style: TextStyle(
+                                              decoration: TextDecoration.underline,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'Arial'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(
                                   height: AppDimension.height(25, context),
