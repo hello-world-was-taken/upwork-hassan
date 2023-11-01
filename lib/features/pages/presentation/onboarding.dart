@@ -144,7 +144,7 @@ class ProgressIndicator extends StatelessWidget {
                                   ),
                               )
                               : AnimatedSwitcher(
-                                  duration: Duration(seconds: 2),
+                                  duration: Duration(milliseconds: 500),
                                   transitionBuilder: (Widget child, Animation<double> animation) {
                                     return ScaleTransition(scale: animation, child: child);
                                   },

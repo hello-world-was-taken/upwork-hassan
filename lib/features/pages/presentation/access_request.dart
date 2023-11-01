@@ -68,7 +68,7 @@ Navigator.push(
         child: Center(
           child: Text(
                   '次へ',
-                  style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(50, context)),
+                  style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(30, context)),
                 ),
         ),
       ),
