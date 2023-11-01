@@ -300,7 +300,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
               ),
 
               Container(
-                width: AppDimension.width(100, context),
+                width: AppDimension.width(85, context),
                 height: AppDimension.height(100, context),
                 child: ElevatedButton(
                   onPressed: (){
@@ -314,12 +314,14 @@ class _SecondStepPageState extends State<SecondStepPage> {
                       )
                     )
                   ),
-                  child: Text("在留カード",
-                  style: TextStyle(
-                    color: Colors.white,
-                      fontSize: AppDimension.height(22, context),
-                      fontWeight: FontWeight.bold,
-                  ),
+                  child: Center(
+                    child: Text("在留カード",
+                    style: TextStyle(
+                      color: Colors.white,
+                        fontSize: AppDimension.fontSize(25, context),
+                        fontWeight: FontWeight.bold,
+                    ),
+                    ),
                   ),
                 ),
               )
