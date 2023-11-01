@@ -25,7 +25,7 @@ class _AgreementState extends State<Agreement> {
       child: Scaffold(
           appBar: CustomAppBar(text: "ご本人確認書類の選択"),
           body: Container(
-              margin: EdgeInsets.symmetric(vertical: AppDimension.height(40, context), horizontal: AppDimension.width(20, context)),
+              margin: EdgeInsets.only(top: AppDimension.height(40, context), left: AppDimension.width(20, context),right: AppDimension.width(20, context)),
               child: Stack(children: [
                 SingleChildScrollView(
                   child: Column(children: [
@@ -123,8 +123,8 @@ class _AgreementState extends State<Agreement> {
                     )
                   ]),
                 ),
-                Align(
-                    alignment: Alignment.bottomCenter,
+                Positioned(
+                    bottom: 0,
                     child: ActionButton(
                       onPressed: () {
                         Navigator.push(
@@ -133,8 +133,13 @@ class _AgreementState extends State<Agreement> {
                         );
                       },
                       text: '次へ進む',
-                    ))
-              ]))),
+                    )
+                    
+                    )
+              ]
+              )
+              )
+              ),
     );
   }
 }

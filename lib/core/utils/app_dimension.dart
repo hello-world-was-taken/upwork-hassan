@@ -17,4 +17,10 @@ class AppDimension {
     double ratio = screenSize / (myDeviceWidth > myDeviceHeight ? myDeviceWidth : myDeviceHeight);
     return requiredRadius * ratio;
   }
+    static double fontSize(double requiredFontSize, BuildContext context) {
+    double screenSize = MediaQuery.of(context).size.shortestSide;
+    double ratio = screenSize / (myDeviceWidth > myDeviceHeight ? myDeviceWidth : myDeviceHeight);
+    return requiredFontSize * ratio;
+  }
+  
 }

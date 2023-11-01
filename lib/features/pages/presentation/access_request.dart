@@ -67,7 +67,7 @@ class AccessRequest extends StatelessWidget {
                   ),
                   child: Text(
                     '次へ',
-                    style: TextStyle(color: Colors.black, fontSize: AppDimension.height(30, context)),
+                    style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(50, context)),
                   ),
                 ),
               ),

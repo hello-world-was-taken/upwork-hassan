@@ -97,12 +97,20 @@ class _OnBoardingState extends State<OnBoarding> {
 
 class ProgressIndicator extends StatelessWidget {
   final int stage;
-  const ProgressIndicator({super.key, required this.stage});
+  const ProgressIndicator({Key? key, required this.stage}) : super(key: key);
+
+  Color getProgressColor(int index) {
+    if (stage > index) {
+      return Colors.black;
+    } else {
+      return Color(0XFF757575);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppDimension.height(50, context),
+      height: AppDimension.height(90, context),
       child: ListView.builder(
         itemCount: 4,
         shrinkWrap: true,
@@ -114,24 +122,47 @@ class ProgressIndicator extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
-                    stage <= index ? Icons.circle : Icons.check,
-                    color: stage < index ? Color(0XFF757575) : Colors.black,
-                    size: AppDimension.radius(16, context),
+                  Container(
+                    height: AppDimension.height(50, context),
+                    child: AnimatedSwitcher(
+                    duration: Duration(seconds: 1),
+                    transitionBuilder: (Widget child, Animation<double> animation) {
+                      return ScaleTransition(scale: animation, child: child);
+                    },
+                    child: stage <= index
+                        ? Icon(
+                            Icons.circle,
+                            key: ValueKey<int>(index),
+                            color: getProgressColor(index),
+                            size: AppDimension.radius(16, context),
+                          )
+                        : AnimatedSwitcher(
+                            duration: Duration(seconds: 2),
+                            transitionBuilder: (Widget child, Animation<double> animation) {
+                              return ScaleTransition(scale: animation, child: child);
+                            },
+                            child: Icon(
+                              Icons.check,
+                              key: ValueKey<int>(index),
+                              color: Colors.black,
+                              size: AppDimension.radius(80, context),
+                            ),
+                          ),
+                  ),
                   ),
                   Text(
                     "stage $index",
-                    style: TextStyle(fontSize: AppDimension.height(20, context)),
+                    style: TextStyle(fontSize: AppDimension.fontSize(40, context)),
                   )
                 ],
               ),
               index < 3
-                  ? Container(
+                  ? AnimatedContainer(
+                      duration: Duration(seconds: 3),
                       height: AppDimension.height(5, context),
-                      width: AppDimension.width(40, context),
+                      width: AppDimension.width(30, context),
                       margin: EdgeInsets.only(top: AppDimension.height(5, context)),
-                      color:
-                          stage - 1 < index ? Color(0XFF757575) : Colors.black,
+                      color: getProgressColor(index),
                     )
                   : SizedBox.shrink()
             ],
@@ -141,6 +172,7 @@ class ProgressIndicator extends StatelessWidget {
     );
   }
 }
+
 
 class FirstStepPage extends StatelessWidget {
   const FirstStepPage({super.key});

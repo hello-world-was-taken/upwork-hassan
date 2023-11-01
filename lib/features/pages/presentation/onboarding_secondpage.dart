@@ -37,7 +37,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
         ),
         SecondaryColorHeading(title: "54,000"),
         SizedBox(
-          height: 10.h,
+          height: 30.h,
         ),
         Container(
           height: 60.h,

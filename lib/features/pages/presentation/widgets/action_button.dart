@@ -32,7 +32,7 @@ class ActionButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: AppDimension.height(28, context)),
+          style: TextStyle(color: Colors.white, fontSize: AppDimension.fontSize(40, context)),
         ),
       ),
     );
