@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
-import 'package:upwork_hassan/features/pages/presentation/onboarding_firstpage.dart';
-import 'package:upwork_hassan/features/pages/presentation/onboarding_fourthpage.dart';
-import 'package:upwork_hassan/features/pages/presentation/onboarding_secondpage.dart';
-import 'package:upwork_hassan/features/pages/presentation/onboarding_thirdpage.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -34,19 +29,15 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    var _pages = [
-      FirstStepPage(),
-      SecondStepPage(),
-      ThirdStepPage(),
-      FourthStepPage()
-    ];
+    var _pages = [FirstStepPage(), SecondStepPage(), ThirdStepPage(), FourthStepPage()];
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(40, context), vertical: AppDimension.height(10, context)),
-          // height: MediaQuery.of(context).size.height,
+          padding: EdgeInsets.symmetric(
+              horizontal: AppDimension.width(40, context),
+              vertical: AppDimension.height(10, context)),
           child: Container(
             child: Column(
               children: [
@@ -59,8 +50,9 @@ class _OnBoardingState extends State<OnBoarding> {
                 ),
                 Container(
                   color: Colors.white,
-                  padding: EdgeInsets.all(AppDimension.height(10, context)),
-                  
+                  padding: EdgeInsets.symmetric(
+                      vertical: AppDimension.height(10, context),
+                      horizontal: AppDimension.height(20, context)),
                   child: _pages[stage],
                 ),
                 SizedBox(
@@ -97,6 +89,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
 class ProgressIndicator extends StatelessWidget {
   final int stage;
+
   const ProgressIndicator({Key? key, required this.stage}) : super(key: key);
 
   Color getProgressColor(int index) {
@@ -129,22 +122,22 @@ class ProgressIndicator extends StatelessWidget {
                       Container(
                         height: AppDimension.height(0, context),
                         child: AnimatedSwitcher(
-                          duration: Duration(seconds: 1),
+                          duration: Duration(milliseconds: 250),
                           transitionBuilder: (Widget child, Animation<double> animation) {
                             return ScaleTransition(scale: animation, child: child);
                           },
                           child: stage <= index
                               ? Container(
-                                margin: EdgeInsets.only(top: AppDimension.height(7, context)),
-                                child: Icon(
+                                  margin: EdgeInsets.only(top: AppDimension.height(7, context)),
+                                  child: Icon(
                                     Icons.circle,
                                     key: ValueKey<int>(index),
                                     color: getProgressColor(index),
-                                    size: AppDimension.radius(16, context),
+                                    size: AppDimension.radius(12, context),
                                   ),
-                              )
+                                )
                               : AnimatedSwitcher(
-                                  duration: Duration(milliseconds: 500),
+                                  duration: Duration(milliseconds: 250),
                                   transitionBuilder: (Widget child, Animation<double> animation) {
                                     return ScaleTransition(scale: animation, child: child);
                                   },
@@ -158,7 +151,7 @@ class ProgressIndicator extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: AppDimension.height(40, context)),
+                        margin: EdgeInsets.only(top: AppDimension.height(30, context)),
                         child: Text(
                           "同意し $index",
                           style: TextStyle(fontSize: AppDimension.fontSize(20, context)),
@@ -170,13 +163,13 @@ class ProgressIndicator extends StatelessWidget {
                       ? Column(
                           children: [
                             SizedBox(
-                              height: AppDimension.height(5, context),
+                              height: AppDimension.height(3, context),
                             ),
                             AnimatedContainer(
-                              duration: Duration(seconds: 3),
-                              height: AppDimension.height(5, context),
-                              width: AppDimension.width(30, context),
-                              margin: EdgeInsets.only(top: AppDimension.height(5, context)),
+                              duration: Duration(microseconds: 250),
+                              height: AppDimension.height(3, context),
+                              width: AppDimension.width(50, context),
+                              margin: EdgeInsets.only(top: AppDimension.height(3, context)),
                               color: getProgressColor(index),
                             )
                           ],
@@ -192,7 +185,6 @@ class ProgressIndicator extends StatelessWidget {
   }
 }
 
-
 class FirstStepPage extends StatelessWidget {
   const FirstStepPage({super.key});
 
@@ -206,14 +198,12 @@ class FirstStepPage extends StatelessWidget {
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            CustomCard(
-                title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
-                options: ["申請の途", "申請の途"]),
+            CustomCard(title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただ", options: ["申請の途", "申請の途"]),
             SizedBox(
               height: AppDimension.height(10, context),
             ),
             CustomCard(
-              title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
+              title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があり。",
               subtitle: "iphone: 申請の途中でブラウザを閉じた場合は、ります。 \n申請の途中でブラウザを閉じた場合。",
               options: ["途中で", "途中で"],
             ),
@@ -287,7 +277,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
           ),
         ),
         SizedBox(
-          height:AppDimension.height(10, context),
+          height: AppDimension.height(10, context),
         ),
         Container(
           margin: EdgeInsets.only(top: AppDimension.height(50, context)),
@@ -390,13 +380,11 @@ class _SecondStepPageState extends State<SecondStepPage> {
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            RoundBulletText(
-                text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+            RoundBulletText(text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
             SizedBox(
               height: AppDimension.height(10, context),
             ),
-            RoundBulletText(
-                text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+            RoundBulletText(text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
           ],
         ),
       ],
@@ -426,6 +414,7 @@ class CustomCard extends StatefulWidget {
   final title;
   final subtitle;
   final options;
+
   const CustomCard({
     super.key,
     required this.title,
@@ -434,11 +423,12 @@ class CustomCard extends StatefulWidget {
   });
 
   @override
-  State<CustomCard> createState() => _CustomeCardState();
+  State<CustomCard> createState() => _CustomCardState();
 }
 
-class _CustomeCardState extends State<CustomCard> {
+class _CustomCardState extends State<CustomCard> {
   int selectedOption = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -446,22 +436,18 @@ class _CustomeCardState extends State<CustomCard> {
       children: [
         Container(
           margin: EdgeInsets.only(
-            
-             top: AppDimension.height(20, context),
-             bottom: AppDimension.height(10, context),
-             )
-             ,
+            top: AppDimension.height(20, context),
+          ),
           child: Text(
             widget.title,
             style: TextStyle(
                 color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: AppDimension.height(20, context)),
+                fontWeight: FontWeight.w600,
+                fontSize: AppDimension.height(18, context)),
           ),
         ),
         widget.subtitle != null
             ? Container(
-                margin: EdgeInsets.only(left: AppDimension.height(25, context)),
                 child: Text(
                   widget.subtitle,
                   style: TextStyle(
@@ -473,28 +459,33 @@ class _CustomeCardState extends State<CustomCard> {
               )
             : const SizedBox.shrink(),
         Container(
-          height: AppDimension.height(50, context),
+          height: AppDimension.height(45, context),
+          // color: Colors.green,
           child: ListView.builder(
             itemCount: widget.options.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return Row(
                 children: <Widget>[
-                  Transform.scale(
-                    scale: AppDimension.radius(1, context),
-                    child: Radio(
-                      value: index,
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value as int;
-                        });
-                      },
+                  SizedBox(
+                    height: 18,
+                    width: 18,
+                    child: Container(
+                      margin: EdgeInsets.only(right: 8),
+                      child: Radio(
+                        value: index,
+                        groupValue: selectedOption,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedOption = value as int;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   Text(
                     widget.options[index],
-                    style: TextStyle(fontSize: AppDimension.height(18, context)),
+                    style: TextStyle(fontSize: AppDimension.height(16, context)),
                   ),
                   SizedBox(
                     width: AppDimension.width(10, context),

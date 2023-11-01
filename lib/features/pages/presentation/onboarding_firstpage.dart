@@ -14,9 +14,7 @@ class FirstStepPage extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            CustomCard(
-                title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。",
-                options: ["申請の途", "申請の途"]),
+            CustomCard(title: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。", options: ["申請の途", "申請の途"]),
             SizedBox(
               height: 10.h,
             ),
@@ -74,10 +72,7 @@ class _CustomeCardState extends State<CustomCard> {
           margin: EdgeInsets.only(left: 20.w, top: 20.h),
           child: Text(
             widget.title,
-            style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 20.h),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20.h),
           ),
         ),
         widget.subtitle != null

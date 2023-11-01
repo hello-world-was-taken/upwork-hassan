@@ -1,9 +1,7 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:upwork_hassan/features/pages/presentation/camera_overlay.dart';
-import 'package:upwork_hassan/features/pages/presentation/camera_page.dart';
 
 class UsageDemo extends StatelessWidget {
   const UsageDemo({super.key});
@@ -14,7 +12,9 @@ class UsageDemo extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0XFF1E1E1E),
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: AppDimension.width(30, context), vertical: AppDimension.height(20, context)),
+          padding: EdgeInsets.symmetric(
+              horizontal: AppDimension.width(30, context),
+              vertical: AppDimension.height(20, context)),
           child: ListView(
             children: [
               Text(
@@ -25,7 +25,9 @@ class UsageDemo extends StatelessWidget {
               Container(
                 height: AppDimension.height(5, context),
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: AppDimension.width(20, context), vertical: AppDimension.height(30, context)),
+                margin: EdgeInsets.symmetric(
+                    horizontal: AppDimension.width(20, context),
+                    vertical: AppDimension.height(30, context)),
                 decoration: BoxDecoration(
                   color: Color(0XFFB3B3B3),
                   borderRadius: BorderRadius.circular(10.0),
@@ -54,20 +56,20 @@ class UsageDemo extends StatelessWidget {
               ),
               SizedBox(height: AppDimension.height(30, context)),
               Container(
-                margin: EdgeInsets.symmetric(vertical: AppDimension.height(5, context), horizontal: AppDimension.width(10, context)),
+                margin: EdgeInsets.symmetric(
+                    vertical: AppDimension.height(5, context),
+                    horizontal: AppDimension.width(10, context)),
                 width: AppDimension.width(250, context),
                 height: AppDimension.height(70, context),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => CameraOverlay()),
+                      MaterialPageRoute(builder: (context) => CameraOverlay()),
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
@@ -81,7 +83,6 @@ class UsageDemo extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: AppDimension.height(24, context),
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
