@@ -117,13 +117,14 @@ class ProgressIndicator extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    height: AppDimension.height(50, context),
+                    height: AppDimension.height(0, context),
                     child: AnimatedSwitcher(
                     duration: Duration(seconds: 1),
                     transitionBuilder: (Widget child, Animation<double> animation) {
@@ -145,25 +146,36 @@ class ProgressIndicator extends StatelessWidget {
                               Icons.check,
                               key: ValueKey<int>(index),
                               color: Colors.black,
-                              size: AppDimension.radius(80, context),
+                              size: AppDimension.radius(30, context),
                             ),
                           ),
                   ),
                   ),
-                  Text(
-                    "stage $index",
-                    style: TextStyle(fontSize: AppDimension.fontSize(40, context)),
+                  Container(
+                    margin: EdgeInsets.only(top: AppDimension.height(40, context)),
+                    child: Text(
+                      "同意し $index",
+                      style: TextStyle(fontSize: AppDimension.fontSize(20, context)),
+                    ),
                   )
                 ],
               ),
               index < 3
-                  ? AnimatedContainer(
+                  ? Column(
+                    children: [
+                      SizedBox(
+                        height: AppDimension.height(5, context),
+                      ),
+                      AnimatedContainer(
+                    
                       duration: Duration(seconds: 3),
                       height: AppDimension.height(5, context),
                       width: AppDimension.width(30, context),
                       margin: EdgeInsets.only(top: AppDimension.height(5, context)),
                       color: getProgressColor(index),
                     )
+                    ],
+                  )
                   : SizedBox.shrink()
             ],
           );

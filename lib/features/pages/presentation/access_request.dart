@@ -42,35 +42,37 @@ class AccessRequest extends StatelessWidget {
               margin: EdgeInsets.only(bottom: AppDimension.height(25, context)),
               padding: EdgeInsets.all(AppDimension.height(10, context)),
               width: double.infinity,
-              height: AppDimension.height(60, context),
               decoration:
                   BoxDecoration(color: Color(0XFF757575), borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
               child: Container(
-                padding: EdgeInsets.only(left:AppDimension.width(290, context)),
-                child: ElevatedButton(
-                  onPressed: () {
-                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => UsageDemo(
-                                 
-                                )),
-                      );
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(AppDimension.radius(10, context)), // Set the border radius
-                      ),
-                    ),
-                  ),
-                  child: Text(
-                    '次へ',
-                    style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(50, context)),
-                  ),
+      
+      margin: EdgeInsets.only(left: AppDimension.width(300, context)),
+      child: TextButton(
+        onPressed: (){
+Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => UsageDemo(
+                               
+                              )),
+                    );
+        },
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        ),
+        child: Center(
+          child: Text(
+                  '次へ',
+                  style: TextStyle(color: Colors.black, fontSize: AppDimension.fontSize(50, context)),
                 ),
-              ),
+        ),
+      ),
+    ),
             ),
           ],
         ),
@@ -78,3 +80,8 @@ class AccessRequest extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
