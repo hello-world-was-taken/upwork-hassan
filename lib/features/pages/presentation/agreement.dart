@@ -41,9 +41,9 @@ class _AgreementState extends State<Agreement> {
                     ),
                     SecondaryColorHeading(title: "株式会社サチ通商弊社」）は"),
                     Container(
-                      height: AppDimension.height(280, context),
+                      
                       child: ListView.builder(
-                        
+                        shrinkWrap: true,
                         itemCount: 3,
                         itemBuilder: (BuildContext context, int index) {
                           return Row(
