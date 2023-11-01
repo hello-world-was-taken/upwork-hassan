@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
 import 'package:upwork_hassan/features/pages/presentation/onboarding.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
 import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
@@ -25,23 +23,30 @@ class _AgreementState extends State<Agreement> {
       child: Scaffold(
           appBar: CustomAppBar(text: "ご本人確認書類の選択"),
           body: Container(
-              margin: EdgeInsets.only(top: AppDimension.height(40, context), left: AppDimension.width(20, context),right: AppDimension.width(20, context)),
+              margin: EdgeInsets.only(
+                  top: AppDimension.height(5, context),
+                  left: AppDimension.width(20, context),
+                  right: AppDimension.width(20, context)),
               child: Stack(children: [
                 SingleChildScrollView(
                   child: Column(children: [
                     SizedBox(
                       height: AppDimension.height(10, context),
                     ),
-                    Text(
-                      "ご提出いただく身分証明書を選択してください。",
-                      style: TextStyle(fontSize: AppDimension.height(20, context)),
+                    Container(
+                      width: double.infinity,
+                      margin: EdgeInsets.only(bottom: AppDimension.height(20, context)),
+                      child: Text(
+                        "ご提出いただく身分証明書を選択してください。",
+                        style: TextStyle(fontSize: AppDimension.height(20, context)),
+                        textAlign: TextAlign.left,
+                      ),
                     ),
                     SizedBox(
                       height: AppDimension.height(20, context),
                     ),
                     SecondaryColorHeading(title: "株式会社サチ通商弊社」）は"),
                     Container(
-                      
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: 3,
@@ -63,7 +68,7 @@ class _AgreementState extends State<Agreement> {
                               Expanded(
                                 child: Container(
                                   margin: EdgeInsets.symmetric(
-                                      vertical: AppDimension.height(20, context), 
+                                      vertical: AppDimension.height(20, context),
                                       horizontal: AppDimension.width(5, context)),
                                   child: Text(_radios[index],
                                       style: TextStyle(fontSize: AppDimension.height(20, context))),
@@ -95,21 +100,15 @@ class _AgreementState extends State<Agreement> {
                         width: double.infinity,
                         child: Column(
                           children: [
-                            RoundBulletText(
-                                text:
-                                    "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(text: "申請の途中でブラウザを閉じた場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: AppDimension.height(10, context),
                             ),
-                            RoundBulletText(
-                                text:
-                                    "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
+                            RoundBulletText(text: "規定時間内（60分以内）に完了しない場合は、最初からやり直していただく必要があります。"),
                             SizedBox(
                               height: AppDimension.height(10, context),
                             ),
-                            RoundBulletText(
-                                text:
-                                    "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
+                            RoundBulletText(text: "カメラへのアクセス許可ポップアップが表示されます。撮影のために許可していただく必要があります。")
                           ],
                         ),
                       ),
@@ -133,13 +132,8 @@ class _AgreementState extends State<Agreement> {
                         );
                       },
                       text: '次へ進む',
-                    )
-                    
-                    )
-              ]
-              )
-              )
-              ),
+                    ))
+              ]))),
     );
   }
 }
