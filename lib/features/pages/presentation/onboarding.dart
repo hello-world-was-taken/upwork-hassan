@@ -280,7 +280,7 @@ class _SecondStepPageState extends State<SecondStepPage> {
           height: AppDimension.height(10, context),
         ),
         Container(
-          margin: EdgeInsets.only(top: AppDimension.height(50, context)),
+          margin: EdgeInsets.only(top: AppDimension.height(30, context)),
           height: AppDimension.height(60, context),
           child: Row(
             
@@ -300,37 +300,30 @@ class _SecondStepPageState extends State<SecondStepPage> {
               ),
 
               Container(
-                
+                width: AppDimension.width(100, context),
+                height: AppDimension.height(100, context),
+                child: ElevatedButton(
+                  onPressed: (){
+
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppDimension.radius(4, context))
+                      )
+                    )
+                  ),
+                  child: Text("在留カード",
+                  style: TextStyle(
+                    color: Colors.white,
+                      fontSize: AppDimension.height(22, context),
+                      fontWeight: FontWeight.bold,
+                  ),
+                  ),
+                ),
               )
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   style: ButtonStyle(
-              //     backgroundColor:
-              //         MaterialStateProperty.all<Color>(Colors.black),
-              //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              //       RoundedRectangleBorder(
-              //         borderRadius:
-              //             BorderRadius.circular(AppDimension.radius(4, context)), // Set the border radius
-              //       ),
-              //     ),
-              //   ),
-              //   child: Container(
-              //     height: double.infinity,
-              //     width: MediaQuery.of(context).size.width * 0.15,
-              //     alignment: Alignment.center,
-              //     padding:
-              //         EdgeInsets.symmetric(horizontal: AppDimension.width(10, context), vertical: AppDimension.height(10, context)),
-              //     child: Text(
-              //       '在留カード',
-              //       textAlign: TextAlign.center,
-              //       style: TextStyle(
-              //         color: Colors.white,
-              //         fontSize: AppDimension.height(12, context),
-              //         fontWeight: FontWeight.bold,
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              
             ],
           ),
         ),

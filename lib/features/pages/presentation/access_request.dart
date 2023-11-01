@@ -17,7 +17,24 @@ class AccessRequest extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SecondaryColorHeading(title: "ご注意"),
+            
+
+            Container(
+      width: double.infinity,
+      height: AppDimension.height(60, context),
+      padding: EdgeInsets.only(top: AppDimension.height(15, context)),
+      decoration: BoxDecoration(
+          color: Color(0XFF757575),
+          borderRadius: BorderRadius.circular(AppDimension.radius(5, context))),
+      child: Text(
+        "ご注意",
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: AppDimension.height(25, context),
+            fontFamily: 'MsGothic'),
+      ),
+    ),
+
             Container(
               // margin: EdgeInsets.only(bottom: 25.h),
               padding: EdgeInsets.symmetric(horizontal: AppDimension.height(10, context)),
