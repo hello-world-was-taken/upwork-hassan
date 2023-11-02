@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/theme/app_color.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/app_bar.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card_container.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/custom_card_container.dart';
@@ -22,6 +23,7 @@ class LandingPage extends StatelessWidget {
         body: SingleChildScrollView(
             child: Column(
           children: [
+            AppBarComponent(),
             SlidingImagesComponent(),
             SizedBox(height: AppDimension.height(150, context)),
             MiddleTextComponent(),
