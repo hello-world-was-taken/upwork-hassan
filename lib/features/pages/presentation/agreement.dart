@@ -53,17 +53,14 @@ class _AgreementState extends State<Agreement> {
                         itemBuilder: (BuildContext context, int index) {
                           return Row(
                             children: <Widget>[
-                              Transform.scale(
-                                scale: AppDimension.radius(1.5, context),
-                                child: Radio(
-                                  value: index,
-                                  groupValue: selectedOption,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      selectedOption = value as int;
-                                    });
-                                  },
-                                ),
+                              Radio(
+                                value: index,
+                                groupValue: selectedOption,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedOption = value as int;
+                                  });
+                                },
                               ),
                               Expanded(
                                 child: Container(
