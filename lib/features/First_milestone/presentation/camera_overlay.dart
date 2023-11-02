@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/popup_widget.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/popup_widget.dart';
 
 class CameraOverlay extends StatefulWidget {
   const CameraOverlay({super.key});

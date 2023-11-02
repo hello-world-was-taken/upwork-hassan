@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
 
-import 'package:upwork_hassan/features/pages/presentation/access_request.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/access_request.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/action_button.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/round_bullet_text.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});

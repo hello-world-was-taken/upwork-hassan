@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
 
-import 'package:upwork_hassan/features/pages/presentation/camera_overlay.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/camera_overlay.dart';
 
 class UsageDemo extends StatelessWidget {
   const UsageDemo({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-import 'package:upwork_hassan/features/pages/presentation/onboarding.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/onboarding.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/action_button.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/app_bar.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/secondary_color_title.dart';
 
 class Agreement extends StatefulWidget {
   const Agreement({super.key});

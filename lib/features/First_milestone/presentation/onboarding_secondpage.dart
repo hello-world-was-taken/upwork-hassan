@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/secondary_color_title.dart';
 
 class SecondStepPage extends StatefulWidget {
   const SecondStepPage({super.key});

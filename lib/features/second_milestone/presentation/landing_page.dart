@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/theme/app_color.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/box_card.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/image_grid.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/sliding_text_with_dots_indicator.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/carousel_slider_images_component.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/trade_grid.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/image_grid.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/sliding_text_with_dots_indicator.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/carousel_slider_images_component.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/trade_grid.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});

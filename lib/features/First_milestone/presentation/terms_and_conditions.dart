@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
-import 'package:upwork_hassan/features/pages/presentation/agreement.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/action_button.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/app_bar.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/secondary_color_title.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/square_bullet_and_text_widget.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/term_holder.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/agreement.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/action_button.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/app_bar.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/secondary_color_title.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/square_bullet_and_text_widget.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/term_holder.dart';
 
 class TermsAndConditions extends StatefulWidget {
   const TermsAndConditions({super.key});

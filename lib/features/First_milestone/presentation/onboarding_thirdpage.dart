@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:upwork_hassan/core/utils/app_dimension.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upwork_hassan/features/pages/presentation/widgets/round_bullet_text.dart';
+import 'package:upwork_hassan/features/First_milestone/presentation/widgets/round_bullet_text.dart';
 
 const List<String> dropdowns = <String>['One', 'Two', 'Three', 'Four'];
 
