@@ -42,8 +42,11 @@ class _LandingPageState extends State<LandingPage> {
                       },
                       icon: Icon(Icons.menu),
                     ),
-                    Image.asset("assets/images/logo_and_name.png",
-                    width: AppDimension.width(320, context),
+                    SizedBox(width: AppDimension.width(30, context),
+                   
+                    ),
+                    Image.asset("assets/images/black.png",
+                    width: AppDimension.width(220, context),
                     ),
                       ],
                     )
@@ -83,9 +86,10 @@ class _LandingPageState extends State<LandingPage> {
             },
             icon: Icon(Icons.close),
           ),
-          Image.asset("assets/images/logo_and_name.png",
-                    width: AppDimension.width(320, context),
+          Image.asset("assets/images/black.png",
+                    width: AppDimension.width(220, context),
                     ),
+          SizedBox(width: AppDimension.width(10, context),)
            // Adjust the width as needed
         ],
       ),
