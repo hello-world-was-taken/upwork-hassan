@@ -51,7 +51,10 @@ class _DesktopAppBarComponentState extends State<DesktopAppBarComponent> {
           Container(
             margin: EdgeInsets.symmetric(
                 horizontal: AppDimension.width(30, context)),
-            child: Image.asset("assets/images/logo_and_name.png"),
+            child: Image.asset(
+              "assets/images/logo_and_name.png",
+              width: AppDimension.width(100, context),
+            ),
           ),
           Container(
             margin: EdgeInsets.only(left: AppDimension.width(60, context)),
@@ -207,41 +210,44 @@ class _MobileAppBarComponentState extends State<MobileAppBarComponent> {
   }
 
   Widget buildSideBar(BuildContext context) {
-    return Container(
-      height: AppDimension.relativeHeight(100, context),
-      width: AppDimension.relativeWidth(100, context),
-      color: Colors.black,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        InkWell(
-          child: Container(
-              margin: EdgeInsets.only(left: 10, top: 10),
-              height: 30,
-              width: 30,
-              color: Colors.black,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    height: 2,
-                    color: Colors.white,
-                  ),
-                  Container(
-                    height: 2,
-                    color: Colors.white,
-                  ),
-                  Container(
-                    height: 2,
-                    color: Colors.white,
-                  )
-                ],
-              )),
-          onTap: () {
-            setState(() {
-              tap = !tap;
-            });
-          },
-        ),
-      ]),
+    return AnimatedSwitcher(
+      duration: Duration(milliseconds: 250),
+      child: Container(
+        height: AppDimension.relativeHeight(100, context),
+        width: AppDimension.relativeWidth(100, context),
+        color: Colors.black,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          InkWell(
+            child: Container(
+                margin: EdgeInsets.only(left: 10, top: 10),
+                height: 30,
+                width: 30,
+                color: Colors.black,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 2,
+                      color: Colors.white,
+                    ),
+                    Container(
+                      height: 2,
+                      color: Colors.white,
+                    ),
+                    Container(
+                      height: 2,
+                      color: Colors.white,
+                    )
+                  ],
+                )),
+            onTap: () {
+              setState(() {
+                tap = !tap;
+              });
+            },
+          ),
+        ]),
+      ),
     );
   }
 }

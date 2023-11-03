@@ -41,7 +41,7 @@ class MobileBoxCardsContainer extends StatelessWidget {
         SizedBox(height: 30),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: _buildBoxes(context, 500),
+          children: _buildBoxes(context, 300),
         )
       ],
     );

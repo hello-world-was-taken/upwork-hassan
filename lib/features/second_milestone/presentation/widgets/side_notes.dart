@@ -82,10 +82,13 @@ List<Widget> _contentBuilder(BuildContext context) {
         Container(
           width: AppDimension.width(150, context),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppDimension.width(5, context)),
+                  horizontal: AppDimension.width(5, context),
+                  vertical: AppDimension.height(5, context),
+                ),
                 child: Text(
                   "透明な買取システムで安心を提供します。",
                   softWrap: true,
@@ -100,7 +103,9 @@ List<Widget> _contentBuilder(BuildContext context) {
               Divider(color: Colors.black),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppDimension.width(5, context)),
+                  horizontal: AppDimension.width(5, context),
+                  vertical: AppDimension.height(5, context),
+                ),
                 child: Text(
                   "透明な買取システムで安心を提供します。",
                   softWrap: true,
@@ -115,7 +120,9 @@ List<Widget> _contentBuilder(BuildContext context) {
               Divider(color: Colors.black),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppDimension.width(5, context)),
+                  horizontal: AppDimension.width(5, context),
+                  vertical: AppDimension.height(5, context),
+                ),
                 child: Text(
                   "透明な買取システムで安心を提供します。",
                   softWrap: true,

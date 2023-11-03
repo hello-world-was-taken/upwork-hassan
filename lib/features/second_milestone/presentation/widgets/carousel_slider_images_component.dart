@@ -19,7 +19,7 @@ class _SlidingImagesComponentState extends State<SlidingImagesComponent> {
       ),
       child: CarouselSlider.builder(
         options: CarouselOptions(
-          height: AppDimension.relativeHeight(60, context),
+          height: AppDimension.relativeHeight(70, context),
           aspectRatio: 16 / 9,
           viewportFraction: 1,
           autoPlay: true,
@@ -38,7 +38,7 @@ class _SlidingImagesComponentState extends State<SlidingImagesComponent> {
                 borderRadius:
                     BorderRadius.circular(AppDimension.height(40, context)),
                 image: DecorationImage(
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.contain,
                   image: AssetImage('assets/images/sliding_image$index.png'),
                 )),
           );

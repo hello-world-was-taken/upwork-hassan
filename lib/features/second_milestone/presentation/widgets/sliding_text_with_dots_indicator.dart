@@ -148,7 +148,7 @@ class _MobileSlidingTextWithDotsState extends State<MobileSlidingTextWithDots> {
                 borderRadius:
                     BorderRadius.circular(AppDimension.height(40, context)),
                 image: const DecorationImage(
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.contain,
                   image: AssetImage('assets/images/sliding_text1.png'),
                 ),
               ),
@@ -275,7 +275,7 @@ class _DesktopSlidingTextWithDotsState
         CarouselSlider.builder(
           carouselController: _carouselController,
           options: CarouselOptions(
-            height: AppDimension.relativeHeight(60, context),
+            height: AppDimension.relativeHeight(70, context),
             aspectRatio: 16 / 9,
             viewportFraction: 1,
             autoPlayAnimationDuration: const Duration(milliseconds: 600),
@@ -285,12 +285,11 @@ class _DesktopSlidingTextWithDotsState
           ),
           itemBuilder: (_, index, realIndex) {
             return Container(
-              width: AppDimension.relativeWidth(90, context),
               decoration: BoxDecoration(
                 borderRadius:
                     BorderRadius.circular(AppDimension.height(40, context)),
                 image: const DecorationImage(
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.contain,
                   image: AssetImage('assets/images/sliding_text1.png'),
                 ),
               ),

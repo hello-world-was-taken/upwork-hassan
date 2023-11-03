@@ -32,27 +32,30 @@ class _LandingPageState extends State<LandingPage> {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        IconButton(
-                      onPressed: () {
-                        _scaffoldKey.currentState!.openDrawer();
-                      },
-                      icon: Icon(Icons.menu),
-                    ),
-                    SizedBox(width: AppDimension.width(30, context),
-                   
-                    ),
-                    Image.asset("assets/images/black.png",
-                    width: AppDimension.width(220, context),
-                    ),
-                      ],
-                    )
-                  ],
-                ),
-                // SlidingImagesComponent(),
+                MediaQuery.of(context).size.width < 1242
+                    ? Column(
+                        children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  _scaffoldKey.currentState!.openDrawer();
+                                },
+                                icon: Icon(Icons.menu),
+                              ),
+                              SizedBox(
+                                width: AppDimension.width(30, context),
+                              ),
+                              Image.asset(
+                                "assets/images/logo_and_name.png",
+                                height: AppDimension.height(50, context),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    : DesktopAppBarComponent(),
+                SlidingImagesComponent(),
                 SizedBox(height: AppDimension.height(150, context)),
                 MiddleTextComponent(),
                 SizedBox(height: AppDimension.height(150, context)),
@@ -68,81 +71,85 @@ class _LandingPageState extends State<LandingPage> {
                 SizedBox(height: AppDimension.height(150, context)),
                 SlidingTextWithDots(),
                 SizedBox(height: AppDimension.height(150, context)),
+                MFooter()
               ],
             ),
           ),
           drawer: Container(
             width: double.infinity,
             child: Drawer(
-  child: ListView(
-    padding: EdgeInsets.zero,
-    children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context); // Close the drawer
-            },
-            icon: Icon(Icons.close),
-          ),
-          Image.asset("assets/images/black.png",
-                    width: AppDimension.width(220, context),
-                    ),
-          SizedBox(width: AppDimension.width(10, context),)
-           // Adjust the width as needed
-        ],
-      ),
-      ListTile(
-        title: Text('企業情報'),
-        onTap: () {
-          // Handle menu item 1 tap
-        },
-      ),
-      Divider(
-        height: 3,
-        ),
-      ListTile(
-        title: Text('事業紹介'),
-        onTap: () {
-          // Handle menu item 2 tap
-        },
-      ),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context); // Close the drawer
+                        },
+                        icon: Icon(Icons.close),
+                      ),
+                      Image.asset(
+                        "assets/images/logo_and_name.png",
+                        height: AppDimension.height(50, context),
+                      ),
+                      SizedBox(
+                        width: AppDimension.width(10, context),
+                      )
+                      // Adjust the width as needed
+                    ],
+                  ),
+                  ListTile(
+                    title: Text('企業情報'),
+                    onTap: () {
+                      // Handle menu item 1 tap
+                    },
+                  ),
+                  Divider(
+                    height: 3,
+                  ),
+                  ListTile(
+                    title: Text('事業紹介'),
+                    onTap: () {
+                      // Handle menu item 2 tap
+                    },
+                  ),
 
-      Divider(
-        height: 3,
-        ),
+                  Divider(
+                    height: 3,
+                  ),
 
-      ListTile(
-        title: Text('サステナビリティ'),
-        onTap: () {
-          // Handle menu item 3 tap
-        },
-      ),
+                  ListTile(
+                    title: Text('サステナビリティ'),
+                    onTap: () {
+                      // Handle menu item 3 tap
+                    },
+                  ),
 
-      Divider(
-        height: 3,
-        ),
-      ListTile(
-        title: Text('リクルート'),
-        onTap: () {
-          // Handle menu item 4 tap
-        },
-      ),
-      Divider(
-        height: 3,
-        ),
+                  Divider(
+                    height: 3,
+                  ),
+                  ListTile(
+                    title: Text('リクルート'),
+                    onTap: () {
+                      // Handle menu item 4 tap
+                    },
+                  ),
+                  Divider(
+                    height: 3,
+                  ),
 
-      ListTile(
-        title: Text('お客様窓口'),
-        onTap: () {
-          // Handle menu item 5 tap
-        },
-      ),
-      // Add more menu items as needed
-    ],
-  ),
-),
+                  ListTile(
+                    title: Text('お客様窓口'),
+                    onTap: () {
+                      // Handle menu item 5 tap
+                    },
+                  ),
+                  // Add more menu items as needed
+                ],
+              ),
+            ),
           )),
     );
   }
