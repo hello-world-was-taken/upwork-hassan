@@ -5,6 +5,7 @@ import 'package:upwork_hassan/features/second_milestone/presentation/widgets/app
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card_container.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/custom_card_container.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/footer.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/image_grid.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/middle_text_container.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/side_notes.dart';
@@ -40,19 +41,10 @@ class LandingPage extends StatelessWidget {
             SizedBox(height: AppDimension.height(150, context)),
             SlidingTextWithDots(),
             SizedBox(height: AppDimension.height(150, context)),
+            MFooter(),
           ],
         )),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
