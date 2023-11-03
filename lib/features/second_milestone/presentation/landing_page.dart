@@ -34,13 +34,19 @@ class _LandingPageState extends State<LandingPage> {
               children: [
                 Column(
                   children: [
-                    IconButton(
+                    Row(
+                      children: [
+                        IconButton(
                       onPressed: () {
                         _scaffoldKey.currentState!.openDrawer();
                       },
                       icon: Icon(Icons.menu),
                     ),
-                    Image.asset("assets/images/logo_and_name.png"),
+                    Image.asset("assets/images/logo_and_name.png",
+                    width: AppDimension.width(320, context),
+                    ),
+                      ],
+                    )
                   ],
                 ),
                 // SlidingImagesComponent(),
@@ -77,11 +83,10 @@ class _LandingPageState extends State<LandingPage> {
             },
             icon: Icon(Icons.close),
           ),
-          Image.asset(
-            "assets/images/logo_and_name.png",
-            height: 50, // Adjust the height as needed
-          ),
-          SizedBox(width: 50), // Adjust the width as needed
+          Image.asset("assets/images/logo_and_name.png",
+                    width: AppDimension.width(320, context),
+                    ),
+           // Adjust the width as needed
         ],
       ),
       ListTile(
