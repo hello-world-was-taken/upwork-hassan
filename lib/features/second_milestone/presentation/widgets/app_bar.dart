@@ -17,7 +17,7 @@ class _AppBarComponentState extends State<AppBarComponent> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: AppDimension.height(110, context),
+      height: AppDimension.height(250, context),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -30,7 +30,7 @@ class _AppBarComponentState extends State<AppBarComponent> {
           ),
         ],
       ),
-      child: Row(
+      child: Column(
         children: [
           Container(
             margin: EdgeInsets.symmetric(
@@ -40,7 +40,7 @@ class _AppBarComponentState extends State<AppBarComponent> {
           Container(
             margin: EdgeInsets.only(left: AppDimension.width(60, context)),
             width: AppDimension.width(150, context),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HoverMenu(
