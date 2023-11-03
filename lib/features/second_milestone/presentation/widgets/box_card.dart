@@ -5,28 +5,32 @@ class BoxCard extends StatelessWidget {
   final title;
   final subtitle;
   final asset;
+  final width;
   const BoxCard(
       {super.key,
       required this.title,
       required this.subtitle,
-      required this.asset});
+      required this.asset,
+      required this.width});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-          horizontal: AppDimension.relativeWidth(10, context)),
+      padding:
+          EdgeInsets.symmetric(horizontal: AppDimension.width(10, context)),
+      height: AppDimension.height(600, context),
+      width: AppDimension.width(width, context),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppDimension.height(10, context)),
         color: Colors.white,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: AppDimension.relativeWidth(10, context)),
+              horizontal: AppDimension.width(10, context),
+            ),
             child: Text(
               title,
               maxLines: 3,
@@ -38,7 +42,7 @@ class BoxCard extends StatelessWidget {
           SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: AppDimension.relativeWidth(10, context)),
+                horizontal: AppDimension.width(10, context)),
             child: Text(
               subtitle,
               maxLines: 3,
@@ -50,7 +54,6 @@ class BoxCard extends StatelessWidget {
           SizedBox(height: 20),
           Container(
             child: Image.asset(asset),
-            width: AppDimension.relativeWidth(80, context),
           ),
         ],
       ),

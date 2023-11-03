@@ -5,6 +5,7 @@ import 'package:upwork_hassan/features/second_milestone/presentation/widgets/app
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/box_card_container.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/custom_card_container.dart';
+import 'package:upwork_hassan/features/second_milestone/presentation/widgets/footer.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/image_grid.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/middle_text_container.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/side_notes.dart';
@@ -122,7 +123,7 @@ class _LandingPageState extends State<LandingPage> {
       Divider(
         height: 3,
         ),
-        
+
       ListTile(
         title: Text('お客様窓口'),
         onTap: () {
