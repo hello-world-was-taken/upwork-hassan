@@ -22,7 +22,7 @@ class DesktopFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[300], // Set the light grey background color
+      color: Colors.white, // Set the light grey background color
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       child: Column(
         children: [
@@ -161,7 +161,7 @@ class MobileFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[300], // Set the light grey background color
+      color: Colors.white, // Set the light grey background color
       padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
