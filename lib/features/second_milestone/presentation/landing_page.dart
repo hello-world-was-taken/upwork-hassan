@@ -12,47 +12,128 @@ import 'package:upwork_hassan/features/second_milestone/presentation/widgets/sli
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/carousel_slider_images_component.dart';
 import 'package:upwork_hassan/features/second_milestone/presentation/widgets/trade_grid.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({Key? key}) : super(key: key);
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade100,
-        body: SingleChildScrollView(
+          key: _scaffoldKey,
+          backgroundColor: Colors.grey.shade100,
+          body: SingleChildScrollView(
             child: Column(
-          children: [
-            AppBarComponent(),
-            SlidingImagesComponent(),
-            SizedBox(height: AppDimension.height(150, context)),
-            MiddleTextComponent(),
-            SizedBox(height: AppDimension.height(150, context)),
-            tradeGrid(),
-            SizedBox(height: AppDimension.height(150, context)),
-            ImageGridItem(),
-            SizedBox(height: AppDimension.height(150, context)),
-            SideNotes(),
-            SizedBox(height: AppDimension.height(150, context)),
-            CustomCardsContainer(),
-            SizedBox(height: AppDimension.height(150, context)),
-            BoxCardsContainer(),
-            SizedBox(height: AppDimension.height(150, context)),
-            SlidingTextWithDots(),
-            SizedBox(height: AppDimension.height(150, context)),
-          ],
-        )),
+              children: [
+                Column(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        _scaffoldKey.currentState!.openDrawer();
+                      },
+                      icon: Icon(Icons.menu),
+                    ),
+                    Image.asset("assets/images/logo_and_name.png"),
+                  ],
+                ),
+                // SlidingImagesComponent(),
+                SizedBox(height: AppDimension.height(150, context)),
+                MiddleTextComponent(),
+                SizedBox(height: AppDimension.height(150, context)),
+                tradeGrid(),
+                SizedBox(height: AppDimension.height(150, context)),
+                ImageGridItem(),
+                SizedBox(height: AppDimension.height(150, context)),
+                SideNotes(),
+                SizedBox(height: AppDimension.height(150, context)),
+                CustomCardsContainer(),
+                SizedBox(height: AppDimension.height(150, context)),
+                BoxCardsContainer(),
+                SizedBox(height: AppDimension.height(150, context)),
+                SlidingTextWithDots(),
+                SizedBox(height: AppDimension.height(150, context)),
+              ],
+            ),
+          ),
+          drawer: Container(
+            width: double.infinity,
+            child: Drawer(
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context); // Close the drawer
+            },
+            icon: Icon(Icons.close),
+          ),
+          Image.asset(
+            "assets/images/logo_and_name.png",
+            height: 50, // Adjust the height as needed
+          ),
+          SizedBox(width: 50), // Adjust the width as needed
+        ],
       ),
+      ListTile(
+        title: Text('企業情報'),
+        onTap: () {
+          // Handle menu item 1 tap
+        },
+      ),
+      Divider(
+        height: 3,
+        ),
+      ListTile(
+        title: Text('事業紹介'),
+        onTap: () {
+          // Handle menu item 2 tap
+        },
+      ),
+
+      Divider(
+        height: 3,
+        ),
+
+      ListTile(
+        title: Text('サステナビリティ'),
+        onTap: () {
+          // Handle menu item 3 tap
+        },
+      ),
+
+      Divider(
+        height: 3,
+        ),
+      ListTile(
+        title: Text('リクルート'),
+        onTap: () {
+          // Handle menu item 4 tap
+        },
+      ),
+      Divider(
+        height: 3,
+        ),
+        
+      ListTile(
+        title: Text('お客様窓口'),
+        onTap: () {
+          // Handle menu item 5 tap
+        },
+      ),
+      // Add more menu items as needed
+    ],
+  ),
+),
+          )),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
